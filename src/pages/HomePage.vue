@@ -31,13 +31,61 @@ export default {
         <div class="wrapper p-1">
             <div class="container p-5 d-flex justify-content-center flex-wrap">
                 <div class="subcontainer">
-                    <h2>Che cosa facciamo ?</h2>
+                    <h2>CHE COSA FACCIAMO ?</h2>
                     <p class="pt-3">Residenza Donnaca offre ai suoi ospiti un'oasi di pace e relax, dove ogni dettaglio
                         è curato con
                         amore e dedizione. Dagli ampi spazi esterni di Villa Aurelia, dove ci si può rilassare in
                         giardino e godersi la vista sul mare, al patio di Villa dei Pini, perfetto per cene all'aperto
                         sotto il cielo stellato, ogni angolo della Residenza è pensato per il benessere degli ospiti.
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="position-relative">
+        <img class="position-absolute start-0 decoration" src="../assets/img/Layer 4 1.png" alt="">
+        <div class="container position-relative villas">
+            <div class="d-flex flex-column ">
+                <div>
+                    <h2 class="py-5">LE NOSTRE VILLE</h2>
+                </div>
+                <div class="d-flex justify-content-between border-top border-bottom py-5">
+                    <div class="w-50 d-flex">
+                        <span>01</span>
+                        <img class="ps-5" src="../assets/img/IMG_9912.JPG" alt="">
+                    </div>
+                    <div class="w-50 d-flex flex-column justify-content-evenly align-items-start">
+                        <div class="d-flex align-items-center gap-4">
+                            <h3>VILLA DEI PINI</h3>
+                            <span>JOPPOLO, ITALIA</span>
+                        </div>
+                        <p class=" py-4">
+                            Villa Dei Pini sorge a Ioppolo e offre sistemazioni climatizzate con patio. Questa struttura
+                            fronte mare vanta l'accesso a un balcone, un parcheggio privato gratuito e il WiFi
+                            gratuito...
+                        </p>
+                        <span class="button">
+                            DETTAGLI
+                        </span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between py-5">
+                    <div class="w-50 d-flex">
+                        <span>02</span>
+                        <img class="ps-5" src="../assets/img/IMG_9843.JPG" alt="">
+                    </div>
+                    <div class="w-50 d-flex flex-column justify-content-evenly align-items-start">
+                        <div class="d-flex align-items-center gap-4">
+                            <h3>VILLA AURELIA</h3>
+                            <span>JOPPOLO, ITALIA</span>
+                        </div>
+                        <p class=" py-4">
+                            Villa Aurelia ti accoglie a Ioppolo vicino al mare cristallino, offre relax con terrazza vista mare, cucina attrezzata e giardino con barbecue. Ideale per famiglie, coppie e chi cerca benessere...
+                        </p>
+                        <span class="button">
+                            DETTAGLI
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -58,7 +106,7 @@ h1 {
 .hero-1 {
     width: 50vw;
     height: 100vh;
-    background-image: url(../assets/img/beautiful-italian-town-of-tropea-wallpaper.jpg);
+    background-image: url(../assets/img/IMG-20240410-WA0006.jpg);
     background-position: bottom;
     background-size: cover;
     background-repeat: no-repeat;
@@ -67,7 +115,7 @@ h1 {
 .hero-2 {
     width: 50vw;
     height: 100vh;
-    background-image: url(../assets/img/beautiful-italian-town-of-tropea-wallpaper.jpg);
+    background-image: url(../assets/img/IMG-20240325-WA0021.jpg);
     background-position: bottom;
     background-size: cover;
     background-repeat: no-repeat;
@@ -99,7 +147,7 @@ h1 {
 }
 
 .wrapper {
-    background-image: url(../assets/img/praia-i-focu-970x485.jpg);
+    background-image: url(../assets/img/IMG-20240410-WA0006.jpg);
     background-attachment: fixed;
     background-size: cover;
 
@@ -129,5 +177,55 @@ h1 {
             }
         }
     }
+}
+
+.button {
+    padding: 10px 40px;
+    border: 1px solid rgb(213, 213, 213);
+
+    &:hover {
+        background-color: #587E52;
+        color: white;
+    }
+}
+
+.decoration {
+    top: 50px;
+}
+
+.villas {
+
+    img {
+        width: 500px;
+    }
+
+    h2 {
+        font-size: 3.3rem;
+        font-family: "Imbue", serif;
+        font-optical-sizing: auto;
+        font-weight: 150;
+    }
+
+    h3 {
+        margin: 0;
+        font-size: 2.2rem;
+        font-family: "Imbue", serif;
+        font-optical-sizing: auto;
+        font-weight: 150;
+    }
+
+    p {
+        font-size: 1.2rem;
+        line-height: 25px;
+    }
+
+    span {
+        font-size: 1.4rem;
+        font-family: "Imbue", serif;
+        font-optical-sizing: auto;
+        font-weight: 100;
+    }
+
+
 }
 </style>
