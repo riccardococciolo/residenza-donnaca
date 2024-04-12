@@ -1,10 +1,13 @@
 <script>
+import EventCard from '../components/EventCard.vue'
+
 export default {
     data() {
         return {
 
         }
     },
+    components: { EventCard }
 }
 </script>
 
@@ -89,6 +92,9 @@ export default {
                 </div>
             </div>
         </div>
+    </section>
+    <section>
+        <EventCard />
     </section>
 </template>
 
