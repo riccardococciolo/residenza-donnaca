@@ -4,7 +4,16 @@ import EventCard from '../components/EventCard.vue'
 export default {
     data() {
         return {
-
+            events: [
+                { type: "SAGRA", img: "src/assets/img/cuppo.jpg", date: "3 AGOSTO", name: "SAGRA DEL PESCE AZZURRO", link: "...", city: "PARGHELIA" },
+                { type: "SAGRA", img: "src/assets/img/pitta.jpg", date: "5 AGOSTO", name: "SAGRA DA PITTA CHINA", link: "...", city: "SAN COSTANTINO" },
+                { type: "SAGRA", img: "src/assets/img/suriaca.jpg", date: "6 AGOSTO", name: "SAGRA DA SUJACA", link: "...", city: "CARIA" },
+                { type: "SAGRA", img: "src/assets/img/nduja.jpg", date: "8 AGOSTO", name: "SAGRA DELLA NDUJA", link: "...", city: "SPILINGA" },
+                { type: "SAGRA", img: "src/assets/img/vino.avif", date: "10 AGOSTO", name: "SAGRA DEL VINO", link: "...", city: "BRATTIRÓ" },
+                { type: "SAGRA", img: "src/assets/img/d812e7.jpg", date: "13 AGOSTO", name: "SAGRA DELLA CIPOLLA ROSSA", link: "...", city: "RICADI" },
+                { type: "SAGRA", img: "src/assets/img/pane.jpg", date: "18 AGOSTO", name: "SAGRA DEL PANE", link: "...", city: "STEFANACONI" },
+                { type: "FESTA", img: "src/assets/img/cipolla.jpg", date: "20 AGOSTO", name: "TROPEA CIPOLLA PARTY", link: "...", city: "PARGHELIA" },
+            ]
         }
     },
     components: { EventCard }
@@ -45,7 +54,7 @@ export default {
             </div>
         </div>
     </section>
-    <section class="position-relative">
+    <section class="position-relative py-5">
         <img class="position-absolute start-0 decoration" src="../assets/img/Layer 4 1.png" alt="">
         <div class="container position-relative villas">
             <div class="d-flex flex-column ">
@@ -83,7 +92,9 @@ export default {
                             <span>JOPPOLO, ITALIA</span>
                         </div>
                         <p class=" py-4">
-                            Villa Aurelia ti accoglie a Ioppolo vicino al mare cristallino, offre relax con terrazza vista mare, cucina attrezzata e giardino con barbecue. Ideale per famiglie, coppie e chi cerca benessere...
+                            Villa Aurelia ti accoglie a Ioppolo vicino al mare cristallino, offre relax con terrazza
+                            vista mare, cucina attrezzata e giardino con barbecue. Ideale per famiglie, coppie e chi
+                            cerca benessere...
                         </p>
                         <span class="button">
                             DETTAGLI
@@ -93,8 +104,75 @@ export default {
             </div>
         </div>
     </section>
-    <section>
-        <EventCard />
+    <section class="overflow-x-auto w-100 d-flex scroll pt-5">
+        <div class="" v-for="event in events">
+            <EventCard class="" :type="event.type" :img="event.img" :date="event.date" :name="event.name"
+            :link="event.link" :city="event.city" />
+        </div>
+    </section>
+    <section class="position-relative py-5">
+        <img class="position-absolute start-0 decoration" src="../assets/img/Layer 4 1.png" alt="">
+        <div class="container position-relative villas">
+            <div class="d-flex flex-column ">
+                <div>
+                    <h2 class="py-5">SPIAGGIE CONSIGLIATE</h2>
+                </div>
+                <div class="d-flex justify-content-between border-top border-bottom py-5">
+                    <div class="w-50 d-flex">
+                        <span>01</span>
+                        <img class="ps-5" src="../assets/img/coccorino.webp" alt="">
+                    </div>
+                    <div class="w-50 d-flex flex-column justify-content-evenly align-items-start">
+                        <div class="d-flex align-items-center gap-4">
+                            <h3>SPIAGGIA DI COCCORINO</h3>
+                            <span>COCCORINO, ITALIA</span>
+                        </div>
+                        <p class=" py-4">
+                            La spiaggia è denominata Le Saline, nella Baia del Corsaro. Molto tempo addietro in questa zona c’erano delle saline, per la produzione di sale è una spiaggia in parte sabbiosa ed in parte con sassi di piccole e medie dimensioni....
+                        </p>
+                        <span class="button">
+                            DETTAGLI
+                        </span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between py-5">
+                    <div class="w-50 d-flex">
+                        <span>02</span>
+                        <img class="ps-5" src="../assets/img/grotticelle.webp" alt="">
+                    </div>
+                    <div class="w-50 d-flex flex-column justify-content-evenly align-items-start">
+                        <div class="d-flex align-items-center gap-4">
+                            <h3>SPIAGGIA DI GROTTICELLE</h3>
+                            <span>CAPO VATICANO, ITALIA</span>
+                        </div>
+                        <p class=" py-4">
+                            La spiaggia di Grotticelle è costituita da tre piccole spiagge di sabbia chiara e sottile lambite da un mare azzurro e cristallino. Il fondale sabbioso davanti alla spiaggia diventa invece roccioso intorno agli scogli, e ospita una ricca e variegata flora e fauna subacquea...
+                        </p>
+                        <span class="button">
+                            DETTAGLI
+                        </span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between py-5 border-top">
+                    <div class="w-50 d-flex">
+                        <span>03</span>
+                        <img class="ps-5" src="../assets/img/tono.JPG" alt="">
+                    </div>
+                    <div class="w-50 d-flex flex-column justify-content-evenly align-items-start">
+                        <div class="d-flex align-items-center gap-4">
+                            <h3>SPIAGGIA DEL TONO</h3>
+                            <span>RICADI, ITALIA</span>
+                        </div>
+                        <p class=" py-4">
+                            E’ una grandissima spiaggia con sabbia bianchissima e mare cristallino, dotata inoltre di tutti i servizi e comodità. Si affaccia su mare aperto con una visuale diretta su Stromboli e il resto delle Isole Eolie...
+                        </p>
+                        <span class="button">
+                            DETTAGLI
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 </template>
 
@@ -196,13 +274,16 @@ h1 {
 }
 
 .decoration {
-    top: 50px;
+    top: 90px;
 }
 
 .villas {
 
     img {
         width: 500px;
+        height: 270px;
+        object-fit: cover;
+        object-position: center;
     }
 
     h2 {

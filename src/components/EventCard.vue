@@ -6,6 +6,7 @@ export default {
         date: String,
         name: String,
         link: String,
+        city: String,
     },
     data() {
         return {
@@ -21,14 +22,15 @@ export default {
 
 <template>
     <div class="box d-flex flex-column justify-content-between align-items-center"
-        :style="{ backgroundImage: 'url(' + imgPath() + ')' }">
+        :style="{ backgroundImage: 'url(' + img + ')' }">
         <img class="position-absolute decoration" src="../assets/img/Layer 4 5 (1).png" alt="">
-        <h2 class="text-center">{{ message }}</h2>
+        <h2 class="text-center">{{ type }}</h2>
         <div class="d-flex flex-column text-white align-items-center">
             <span class="index pb-2">{{ date }}</span>
             <p>{{ name }}</p>
         </div>
-        <div class="d-flex flex-column text-white">
+        <div class="d-flex flex-column align-items-center gap-3 text-white">
+            <p>{{ city }}</p>
             <a :href="link"><span class="button">DETTAGLI</span></a>
         </div>
     </div>
@@ -38,9 +40,10 @@ export default {
 .box {
     position: relative;
     height: 500px;
-    width: 300px;
+    width: 310px;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     padding: 30px;
 
     h2 {
@@ -98,6 +101,11 @@ export default {
             background-color: #587E52;
             color: white;
         }
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
     }
 }
 </style>
