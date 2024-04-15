@@ -21,7 +21,7 @@ export default {
 </script>
 
 <template>
-    <section class="position-relative d-flex">
+    <section class="position-relative d-flex hero">
         <h1 class="py-3 position-absolute start-50 translate-middle">RESIDENZA DONNA CÀ</h1>
         <div class="hero-1">
         </div>
@@ -177,6 +177,17 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+
+.hero::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent, rgb(255, 255, 255, 0.6), rgb(255, 255, 255));
+    z-index: 1000;
+}
+
 h1 {
     font-family: "Imbue", serif;
     font-optical-sizing: auto;
