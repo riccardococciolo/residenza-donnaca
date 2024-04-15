@@ -3,11 +3,11 @@ export default {
     data() {
         return {
             links: [
-                { name: "Home", num: "01" },
-                { name: "Event", num: "02" },
-                { name: "Beach", num: "03" },
-                { name: "Villa Aurelia", num: "04" },
-                { name: "Villa Dei Pini", num: "05" },
+                { title: "Home", num: "01", name: "home" },
+                { title: "Eventi", num: "02", name: "events" },
+                { title: "Spiaggie", num: "03", name: "beaches" },
+                { title: "Villa Aurelia", num: "04", name: "" },
+                { title: "Villa Dei Pini", num: "05", name: "" },
             ],
             isVisible: false,
             transitionOut: false,
@@ -46,8 +46,10 @@ export default {
             <span @click="toggleClose"><i class="fa-solid fa-xmark"></i></span>
         </div>
         <ul class=" m-0">
-            <li class="border-bottom w-100 py-3" v-for="link in links"><a class="num" href="">{{ link.num }}</a><a
-                    class="ps-5" href="">{{ link.name }}</a></li>
+            <li class="border-bottom w-100 py-3" v-for="link in links" :key="link.title">
+                <router-link @click="toggleClose" :to="{name: link.name}" class="num">{{ link.num }}</router-link>
+                <router-link @click="toggleClose" :to="{name: link.name}" class="ps-5">{{ link.title }}</router-link>
+            </li>
         </ul>
         <img class="w-100 pt-4" src="../assets/img/Residenza donnacà.svg" alt="">
     </div>
@@ -80,6 +82,7 @@ export default {
 
 .navbar {
     background-color: #587E52;
+    width: 100%;
     position: absolute;
     top: 0px;
     right: 0px;

@@ -96,6 +96,7 @@ export default {
     .button {
         padding: 8px 30px;
         border: 1px solid rgb(213, 213, 213);
+        transition: background-color 0.5s ease-in-out;
 
         &:hover {
             background-color: #587E52;
