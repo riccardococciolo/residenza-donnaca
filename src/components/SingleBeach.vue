@@ -1,13 +1,7 @@
 <script>
 export default {
     props: {
-        num: String,
-        img: String,
-        description: String,
-        name: String,
-        link: String,
-        city: String,
-        date: String,
+        beach: Array,
     },
     data() {
         return {
@@ -19,33 +13,33 @@ export default {
 
 <template>
     <div>
-        <div class="d-flex justify-content-between py-5">
-            <div class="w-50 d-flex">
-                <span>{{ num }}</span>
-                <img class="ps-5" :src="img" alt="">
+        <div class="py-5 w-100">
+            <div class="w-100">
+                <img class="" :src="beach.img" alt="">
             </div>
-            <div class="w-50 d-flex flex-column justify-content-evenly align-items-start">
-                <div class="d-flex align-items-center gap-4">
-                    <h3>{{ name }}</h3>
-                    <span>{{ date }}</span>
+            <div class="pt-4 d-flex justify-content-center">
+                <div class="w-50 d-flex flex-column justify-content-evenly align-items-start">
+                    <div class="d-flex align-items-center gap-4">
+                        <h3>{{ beach.name }}</h3>
+                        <span>{{ beach.city }}</span>
+                    </div>
+                    <p class=" py-4">
+                        {{ beach.description }}
+                    </p>
                 </div>
-                <p class=" py-4">
-                    {{ description }}
-                </p>
-                <div>
-                    <a :href="link"><span class="button">GOOGLE MAPS</span></a>
-                    <span class="px-5">{{ city }}</span>
-                </div>
+                <div class="w-50">
 
+                </div>
             </div>
+
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
 img {
-    width: 500px;
-    height: 270px;
+    height: 40vh;
+    width: 100%;
     object-fit: cover;
     object-position: center;
 }
