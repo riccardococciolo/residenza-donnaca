@@ -1,4 +1,5 @@
 <script>
+
 export default {
     props: {
         beach: Array,
@@ -28,7 +29,10 @@ export default {
                     </p>
                 </div>
                 <div class="w-50">
-
+                    <iframe
+                        :src="beach.link"
+                        width="100%" height="100%" style="border:0;" loading="auto">
+                    </iframe>
                 </div>
             </div>
 
@@ -85,5 +89,10 @@ a {
         background-color: #587E52;
         color: white;
     }
+}
+
+.map {
+    width: 70%;
+    margin: auto;
 }
 </style>
