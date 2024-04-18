@@ -1,5 +1,4 @@
 <script>
-
 export default {
     props: {
         beach: Array,
@@ -89,10 +88,5 @@ a {
         background-color: #587E52;
         color: white;
     }
-}
-
-.map {
-    width: 70%;
-    margin: auto;
 }
 </style>
