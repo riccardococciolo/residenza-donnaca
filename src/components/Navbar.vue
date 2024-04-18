@@ -76,7 +76,7 @@ export default {
     i::before {
         transform: scale(2);
         display: inline-block;
-        color: rgb(255, 255, 255, 0.3);
+        color: rgb(255, 255, 255, 0.8);
     }
 }
 
