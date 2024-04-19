@@ -8,21 +8,27 @@ export default {
         link: String,
         city: String,
         date: String,
+        id: String,
     },
     data() {
         return {
 
         }
     },
+    methods: {
+        getImgPath(img) {
+            return new URL(`${img}`, import.meta.url).href
+        },
+    }
 }
 </script>
 
 <template>
-    <div>
+    <div :id="id">
         <div class="d-flex justify-content-between py-5">
             <div class="w-50 d-flex">
                 <span>{{ num }}</span>
-                <img class="ps-5" :src="img" alt="">
+                <img class="ps-5" :src="getImgPath(img)" alt="">
             </div>
             <div class="w-50 d-flex flex-column justify-content-evenly align-items-start">
                 <div class="d-flex align-items-center gap-4">

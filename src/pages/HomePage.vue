@@ -131,7 +131,7 @@ export default {
                             La spiaggia è denominata Le Saline, nella Baia del Corsaro. Molto tempo addietro in questa zona c’erano delle saline, per la produzione di sale è una spiaggia in parte sabbiosa ed in parte con sassi di piccole e medie dimensioni....
                         </p>
                         <span class="button">
-                            DETTAGLI
+                            <router-link to="/beaches" class="">DETTAGLI</router-link>
                         </span>
                     </div>
                 </div>
@@ -149,7 +149,7 @@ export default {
                             La spiaggia di Grotticelle è costituita da tre piccole spiagge di sabbia chiara e sottile lambite da un mare azzurro e cristallino. Il fondale sabbioso davanti alla spiaggia diventa invece roccioso intorno agli scogli, e ospita una ricca e variegata flora e fauna subacquea...
                         </p>
                         <span class="button">
-                            DETTAGLI
+                            <router-link to="/beaches" class="">DETTAGLI</router-link>
                         </span>
                     </div>
                 </div>
@@ -167,7 +167,7 @@ export default {
                             E’ una grandissima spiaggia con sabbia bianchissima e mare cristallino, dotata inoltre di tutti i servizi e comodità. Si affaccia su mare aperto con una visuale diretta su Stromboli e il resto delle Isole Eolie...
                         </p>
                         <span class="button">
-                            DETTAGLI
+                            <router-link to="/beaches" class="">DETTAGLI</router-link>
                         </span>
                     </div>
                 </div>
@@ -277,6 +277,12 @@ h1 {
 .button {
     padding: 10px 40px;
     border: 1px solid rgb(213, 213, 213);
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
 
     &:hover {
         background-color: #587E52;

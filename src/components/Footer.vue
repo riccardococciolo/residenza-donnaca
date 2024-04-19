@@ -3,11 +3,11 @@ export default {
     data() {
         return {
             links: [
-                {name: "Home", num: "01"},
-                {name: "Event", num: "02"},
-                {name: "Beach", num: "03"},
-                {name: "Villa Aurelia", num: "04"},
-                {name: "Villa Dei Pini", num: "05"},
+                {title: "Home", num: "01", name: "home"},
+                {title: "Event", num: "02", name: "events"},
+                {title: "Beach", num: "03", name: "beaches"},
+                {title: "Villa Aurelia", num: "04"},
+                {title: "Villa Dei Pini", num: "05"},
             ]
         }
     },
@@ -17,7 +17,7 @@ export default {
 <template>
     <div class="footer position-relative">
         <ul class="d-flex gap-5 p-5 justify-content-center m-0">
-            <li v-for="link in links"><a href="">{{ link.name }}</a></li>
+            <li v-for="link in links"><router-link :to="{name: link.name}" class="ps-2 fs-5">{{ link.title }}</router-link></li>
         </ul>
         <img class="w-100" src="../assets/img/Residenza donnacà.svg" alt="">
     </div>

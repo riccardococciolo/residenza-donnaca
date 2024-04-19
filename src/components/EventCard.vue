@@ -31,7 +31,7 @@ export default {
         </div>
         <div class="d-flex flex-column align-items-center gap-3 text-white">
             <p>{{ city }}</p>
-            <a :href="link"><span class="button">DETTAGLI</span></a>
+            <router-link to="/events" class="ps-5"><span class="button">DETTAGLI</span></router-link>
         </div>
     </div>
 </template>
