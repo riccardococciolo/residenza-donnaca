@@ -31,7 +31,7 @@ export default {
         </div>
         <div class="d-flex flex-column align-items-center gap-3 text-white">
             <p>{{ city }}</p>
-            <router-link to="/events" class="ps-5"><span class="button">DETTAGLI</span></router-link>
+            <router-link to="/events" class="button"><span class="">DETTAGLI</span></router-link>
         </div>
     </div>
 </template>
@@ -97,6 +97,7 @@ export default {
         padding: 8px 30px;
         border: 1px solid rgb(213, 213, 213);
         transition: background-color 0.5s ease-in-out;
+        backdrop-filter: blur(6px);
 
         &:hover {
             background-color: #587E52;

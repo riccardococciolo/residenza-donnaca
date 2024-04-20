@@ -6,8 +6,8 @@ export default {
                 {title: "Home", num: "01", name: "home"},
                 {title: "Event", num: "02", name: "events"},
                 {title: "Beach", num: "03", name: "beaches"},
-                {title: "Villa Aurelia", num: "04"},
-                {title: "Villa Dei Pini", num: "05"},
+                {title: "Villa Aurelia", num: "04", name: "villa aurelia"},
+                {title: "Villa Dei Pini", num: "05", name: "villa dei pini"},
             ]
         }
     },

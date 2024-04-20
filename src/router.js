@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HouseDetailsPage from "./pages/HouseDetailsPage.vue";
 import HomePage from "./pages/HomePage.vue";
 import EventsPage from "./pages/EventsPage.vue";
 import BeachesPage from "./pages/BeachesPage.vue";
+import VillaAureliaPage from "./pages/VillaAureliaPage.vue";
+import VillaDeiPiniPage from './pages/VillaDeiPiniPage.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -23,9 +24,14 @@ const router = createRouter({
       component: BeachesPage,
     },
     {
-      path: "/details",
-      name: "house-details",
-      component: HouseDetailsPage,
+      path: "/villa-aurelia",
+      name: "villa aurelia",
+      component: VillaAureliaPage,
+    },
+    {
+      path: "/villa-dei-pini",
+      name: "villa dei pini",
+      component: VillaDeiPiniPage,
     }
   ],
 });
