@@ -51,7 +51,7 @@ export default {
                 <router-link @click="toggleClose" :to="{name: link.name}" class="ps-5">{{ link.title }}</router-link>
             </li>
         </ul>
-        <img class="w-100 pt-4" src="../assets/img/Residenza donnacà.svg" alt="">
+        <img class="w-100 pt-4" src="../assets/img/Residenza donna cà.svg" alt="">
     </div>
     <div v-else class="menu-button">
         <span><i @click="toggleMenu" class="fa-sharp fa-solid fa-bars"></i></span>
@@ -121,7 +121,6 @@ img {
     position: relative;
     bottom: -8px;
     display: block;
-    filter: invert(1);
 }
 
 ul {
