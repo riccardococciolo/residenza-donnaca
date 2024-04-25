@@ -13,6 +13,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/vue-fontawesome": "^3.0.6",
+    "@vercel/speed-insights": "^1.0.10",
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
     "fortawesome": "^0.0.1-security",

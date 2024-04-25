@@ -89,7 +89,7 @@ export default {
                 <div class="d-flex justify-content-between py-5">
                     <div class="w-50 d-flex">
                         <span>02</span>
-                        <img class="ps-5" :src="getImgPath('../assets/img/IMG_9843.JPG')" alt="">
+                        <img class="ps-5" src="../assets/img/villa-dei-pini/IMG_9879.JPG" alt="">
                     </div>
                     <div class="w-50 d-flex flex-column justify-content-evenly align-items-start">
                         <div class="d-flex align-items-center gap-4">
