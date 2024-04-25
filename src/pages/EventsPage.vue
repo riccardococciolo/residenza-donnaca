@@ -17,6 +17,11 @@ export default {
             ]
         }
     },
+    methods: {
+        getImgPath(img) {
+            return new URL(`${img}`, import.meta.url).href
+        },
+    },
     components: { SingleEvent }
 }
 </script>
@@ -28,7 +33,7 @@ export default {
         </div>
         <div class="container py-5">
             <div class="border-top py-3 position-relative" v-for="event in events">
-                <img src="../assets/img/Layer 4 1.png" alt="">
+                <img :src="getImgPath('../assets/img/Layer 4 1.png')" alt="">
                 <SingleEvent :type="event.type" :img="event.img" :date="event.date" :name="event.name"
                     :link="event.link" :city="event.city" :num="event.num" :description="event.description" :id="event.id" />
             </div>

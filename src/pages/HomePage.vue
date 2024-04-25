@@ -5,16 +5,21 @@ export default {
     data() {
         return {
             events: [
-                { type: "SAGRA", img: "src/assets/img/cuppo.jpg", date: "3 AGOSTO", name: "SAGRA DEL PESCE AZZURRO", link: "...", city: "PARGHELIA" },
-                { type: "SAGRA", img: "src/assets/img/pitta.jpg", date: "5 AGOSTO", name: "SAGRA DA PITTA CHINA", link: "...", city: "SAN COSTANTINO" },
-                { type: "SAGRA", img: "src/assets/img/suriaca.jpg", date: "6 AGOSTO", name: "SAGRA DA SUJACA", link: "...", city: "CARIA" },
-                { type: "SAGRA", img: "src/assets/img/nduja.jpg", date: "8 AGOSTO", name: "SAGRA DELLA NDUJA", link: "...", city: "SPILINGA" },
-                { type: "SAGRA", img: "src/assets/img/vino.avif", date: "10 AGOSTO", name: "SAGRA DEL VINO", link: "...", city: "BRATTIRÓ" },
-                { type: "SAGRA", img: "src/assets/img/d812e7.jpg", date: "13 AGOSTO", name: "SAGRA DELLA CIPOLLA ROSSA", link: "...", city: "RICADI" },
-                { type: "SAGRA", img: "src/assets/img/pane.jpg", date: "18 AGOSTO", name: "SAGRA DEL PANE", link: "...", city: "STEFANACONI" },
-                { type: "FESTA", img: "src/assets/img/cipolla.jpg", date: "20 AGOSTO", name: "TROPEA CIPOLLA PARTY", link: "...", city: "PARGHELIA" },
+                { type: "SAGRA", img: "../assets/img/cuppo.jpg", date: "3 AGOSTO", name: "SAGRA DEL PESCE AZZURRO", link: "...", city: "PARGHELIA" },
+                { type: "SAGRA", img: "../assets/img/pitta.jpg", date: "5 AGOSTO", name: "SAGRA DA PITTA CHINA", link: "...", city: "SAN COSTANTINO" },
+                { type: "SAGRA", img: "../assets/img/suriaca.jpg", date: "6 AGOSTO", name: "SAGRA DA SUJACA", link: "...", city: "CARIA" },
+                { type: "SAGRA", img: "../assets/img/nduja.jpg", date: "8 AGOSTO", name: "SAGRA DELLA NDUJA", link: "...", city: "SPILINGA" },
+                { type: "SAGRA", img: "../assets/img/vino.avif", date: "10 AGOSTO", name: "SAGRA DEL VINO", link: "...", city: "BRATTIRÓ" },
+                { type: "SAGRA", img: "../assets/img/d812e7.jpg", date: "13 AGOSTO", name: "SAGRA DELLA CIPOLLA ROSSA", link: "...", city: "RICADI" },
+                { type: "SAGRA", img: "../assets/img/pane.jpg", date: "18 AGOSTO", name: "SAGRA DEL PANE", link: "...", city: "STEFANACONI" },
+                { type: "FESTA", img: "../assets/img/cipolla.jpg", date: "20 AGOSTO", name: "TROPEA CIPOLLA PARTY", link: "...", city: "PARGHELIA" },
             ]
         }
+    },
+    methods: {
+        getImgPath(img) {
+            return new URL(`${img}`, import.meta.url).href
+        },
     },
     components: { EventCard }
 }
@@ -29,7 +34,7 @@ export default {
     </section>
     <section>
         <div class="my-container d-flex flex-column">
-            <img src="../assets/img/Group 15.png" alt="">
+            <img :src="getImgPath('../assets/img/Group 15.png')" alt="">
             <p class="py-4 m-0"><strong>Sogni un rifugio di pace e bellezza dove vivere una vacanza da sogno?</strong>
                 Residenza Donnaca ti accoglie nel cuore della Costa degli Dei, a Capo Vaticano, in Calabria, con le sue
                 due incantevoli villette: Villa Aurelia e Villa dei Pini.</p>
@@ -55,7 +60,7 @@ export default {
         </div>
     </section>
     <section class="position-relative py-5">
-        <img class="position-absolute start-0 decoration" src="../assets/img/Layer 4 1.png" alt="">
+        <img class="position-absolute start-0 decoration" :src="getImgPath('../assets/img/Layer 4 1.png')" alt="">
         <div class="container position-relative villas">
             <div class="d-flex flex-column ">
                 <div>
@@ -64,7 +69,7 @@ export default {
                 <div class="d-flex justify-content-between border-top border-bottom py-5">
                     <div class="w-50 d-flex">
                         <span>01</span>
-                        <img class="ps-5" src="../assets/img/IMG_9912.JPG" alt="">
+                        <img class="ps-5" :src="getImgPath('../assets/img/IMG_9912.JPG')" alt="">
                     </div>
                     <div class="w-50 d-flex flex-column justify-content-evenly align-items-start">
                         <div class="d-flex align-items-center gap-4">
@@ -84,7 +89,7 @@ export default {
                 <div class="d-flex justify-content-between py-5">
                     <div class="w-50 d-flex">
                         <span>02</span>
-                        <img class="ps-5" src="../assets/img/IMG_9843.JPG" alt="">
+                        <img class="ps-5" :src="getImgPath('../assets/img/IMG_9843.JPG')" alt="">
                     </div>
                     <div class="w-50 d-flex flex-column justify-content-evenly align-items-start">
                         <div class="d-flex align-items-center gap-4">
@@ -111,7 +116,7 @@ export default {
         </div>
     </section>
     <section class="position-relative py-5">
-        <img class="position-absolute start-0 decoration" src="../assets/img/Layer 4 1.png" alt="">
+        <img class="position-absolute start-0 decoration" :src="getImgPath('../assets/img/Layer 4 1.png')" alt="">
         <div class="container position-relative villas">
             <div class="d-flex flex-column ">
                 <div>
@@ -120,7 +125,7 @@ export default {
                 <div class="d-flex justify-content-between border-top border-bottom py-5">
                     <div class="w-50 d-flex">
                         <span>01</span>
-                        <img class="ps-5" src="../assets/img/WhatsApp Image 2024-04-22 at 12.18.08 (1).jpeg" alt="">
+                        <img class="ps-5" :src="getImgPath('../assets/img/WhatsApp Image 2024-04-22 at 12.18.08 (1).jpeg')" alt="">
                     </div>
                     <div class="w-50 d-flex flex-column justify-content-evenly align-items-start">
                         <div class="d-flex align-items-center gap-4">
@@ -138,7 +143,7 @@ export default {
                 <div class="d-flex justify-content-between py-5">
                     <div class="w-50 d-flex">
                         <span>02</span>
-                        <img class="ps-5" src="../assets/img/spiaggia di grotticelle.webp" alt="">
+                        <img class="ps-5" :src="getImgPath('../assets/img/spiaggia di grotticelle.webp')" alt="">
                     </div>
                     <div class="w-50 d-flex flex-column justify-content-evenly align-items-start">
                         <div class="d-flex align-items-center gap-4">
@@ -156,7 +161,7 @@ export default {
                 <div class="d-flex justify-content-between py-5 border-top">
                     <div class="w-50 d-flex">
                         <span>03</span>
-                        <img class="ps-5" src="../assets/img/tono.JPG" alt="">
+                        <img class="ps-5" :src="getImgPath('../assets/img/tono.JPG')" alt="">
                     </div>
                     <div class="w-50 d-flex flex-column justify-content-evenly align-items-start">
                         <div class="d-flex align-items-center gap-4">

@@ -8,6 +8,11 @@ export default {
 
         }
     },
+    methods: {
+        getImgPath(img) {
+            return new URL(`${img}`, import.meta.url).href
+        },
+    }
 }
 </script>
 
@@ -15,7 +20,7 @@ export default {
     <div>
         <div class="py-5 w-100">
             <div class="w-100">
-                <img class="" :src="beach.img" alt="">
+                <img class="" :src="getImgPath(beach.img)" alt="">
             </div>
             <div class="pt-4 d-flex justify-content-center">
                 <div class="w-50 d-flex flex-column justify-content-evenly align-items-start">

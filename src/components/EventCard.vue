@@ -10,20 +10,29 @@ export default {
     },
     data() {
         return {
+            imgPath: "",
         }
     },
+    methods: {
+        getDecorationPath(img) {
+            return new URL(`${img}`, import.meta.url).href
+        },
+    },
     computed: {
-        imgPath() {
-            return require('@/assets/img/' + this.img);
-        }
-    }
+        getImgPath() {
+            return new URL(`${this.img}`, import.meta.url).href
+        },
+    },
+    mounted() {
+        this.imgPath = this.getImgPath;
+    },
 }
 </script>
 
 <template>
     <div class="box d-flex flex-column justify-content-between align-items-center"
-        :style="{ backgroundImage: 'url(' + img + ')' }">
-        <img class="position-absolute decoration" src="../assets/img/Layer 4 5 (1).png" alt="">
+        :style="{ backgroundImage: 'url(' + imgPath + ')' }">
+        <img class="position-absolute decoration" :src="getDecorationPath('../assets/img/Layer 4 5 (1).png')" alt="">
         <h2 class="text-center">{{ type }}</h2>
         <div class="d-flex flex-column text-white align-items-center">
             <span class="index pb-2">{{ date }}</span>
