@@ -37,13 +37,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.path.endsWith('/beaches')) {
-    window.scrollTo(0, 0);
-  } else if (to.path.endsWith('/events')) {
-    window.scrollTo(0, 0);
-  } else if (to.path.endsWith('/')) {
-    window.scrollTo(0, 0);
-  }
+  window.scrollTo(0, 0);
   next();
 });
 

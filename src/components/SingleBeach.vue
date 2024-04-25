@@ -27,10 +27,10 @@ export default {
                         {{ beach.description }}
                     </p>
                 </div>
-                <div class="w-50">
+                <div class="w-50 ps-5">
                     <iframe
-                        :src="beach.link"
-                        width="100%" height="100%" style="border:0;" loading="auto">
+                        frameborder="0" allowfullscreen="allowfullscreen" :src="beach.link" width="100%"
+                        height="100%" style="border:0;" loading="auto">
                     </iframe>
                 </div>
             </div>

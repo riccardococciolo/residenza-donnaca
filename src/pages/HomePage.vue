@@ -97,7 +97,7 @@ export default {
                             cerca benessere...
                         </p>
                         <span class="button">
-                            <router-link to="villa aurelia" class="">DETTAGLI</router-link>
+                            <router-link :to="{name: 'villa aurelia'}" class="">DETTAGLI</router-link>
                         </span>
                     </div>
                 </div>
@@ -120,7 +120,7 @@ export default {
                 <div class="d-flex justify-content-between border-top border-bottom py-5">
                     <div class="w-50 d-flex">
                         <span>01</span>
-                        <img class="ps-5" src="../assets/img/coccorino.webp" alt="">
+                        <img class="ps-5" src="../assets/img/WhatsApp Image 2024-04-22 at 12.18.08 (1).jpeg" alt="">
                     </div>
                     <div class="w-50 d-flex flex-column justify-content-evenly align-items-start">
                         <div class="d-flex align-items-center gap-4">
@@ -138,7 +138,7 @@ export default {
                 <div class="d-flex justify-content-between py-5">
                     <div class="w-50 d-flex">
                         <span>02</span>
-                        <img class="ps-5" src="../assets/img/grotticelle.webp" alt="">
+                        <img class="ps-5" src="../assets/img/spiaggia di grotticelle.webp" alt="">
                     </div>
                     <div class="w-50 d-flex flex-column justify-content-evenly align-items-start">
                         <div class="d-flex align-items-center gap-4">
@@ -192,26 +192,27 @@ h1 {
     font-family: "Imbue", serif;
     font-optical-sizing: auto;
     color: white;
-    font-size: 5rem;
+    font-size: 9vw;
     font-weight: 90;
-    top: 80px;
+    top: 150px;
     z-index: 999;
 }
 
 .hero-1 {
     width: 50vw;
     height: 100vh;
-    background-image: url(../assets/img/IMG-20240410-WA0006.jpg);
+    background-image: url(../assets/img/beautiful-italian-town-of-tropea-wallpaper.jpg);
     background-position: bottom;
     background-size: cover;
     background-repeat: no-repeat;
+    // transform: rotateY(180deg);
 }
 
 .hero-2 {
     width: 50vw;
     height: 100vh;
-    background-image: url(../assets/img/IMG-20240325-WA0021.jpg);
-    background-position: bottom;
+    background-image: url('../assets/img/praia\ i\ focu.jpg');
+    background-position: left;
     background-size: cover;
     background-repeat: no-repeat;
     transform: rotateY(180deg);
@@ -242,8 +243,9 @@ h1 {
 }
 
 .wrapper {
-    background-image: url(../assets/img/IMG-20240410-WA0006.jpg);
+    background-image: url(../assets/img/tropea.jpg);
     background-attachment: fixed;
+    background-repeat: no-repeat;
     background-size: cover;
 
     .container {
