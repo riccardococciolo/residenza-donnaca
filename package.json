@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
+    "rollup-plugin-copy": "^3.5.0",
     "scss": "^0.2.4",
     "vite": "^5.2.0"
   }
