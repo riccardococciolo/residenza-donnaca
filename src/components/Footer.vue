@@ -19,7 +19,7 @@ export default {
         <ul class="d-flex gap-5 p-5 justify-content-center m-0">
             <li v-for="link in links"><router-link :to="{name: link.name}" class="ps-2 fs-5">{{ link.title }}</router-link></li>
         </ul>
-        <img class="w-100" src="../assets/img/Residenza donna cà.svg" alt="">
+        <img class="w-100" :src="'../assets/img/Residenza donna cà.svg'" alt="">
     </div>
 </template>
 
