@@ -3,11 +3,11 @@ export default {
     data() {
         return {
             links: [
-                {title: "Home", num: "01", name: "home"},
-                {title: "Event", num: "02", name: "events"},
-                {title: "Beach", num: "03", name: "beaches"},
-                {title: "Villa Aurelia", num: "04", name: "villa aurelia"},
-                {title: "Villa Dei Pini", num: "05", name: "villa dei pini"},
+                { title: "Home", num: "01", name: "home" },
+                { title: "Event", num: "02", name: "events" },
+                { title: "Beach", num: "03", name: "beaches" },
+                { title: "Villa Aurelia", num: "04", name: "villa aurelia" },
+                { title: "Villa Dei Pini", num: "05", name: "villa dei pini" },
             ]
         }
     },
@@ -15,11 +15,14 @@ export default {
 </script>
 
 <template>
-    <div class="footer position-relative">
-        <ul class="d-flex gap-5 p-5 justify-content-center m-0">
-            <li v-for="link in links"><router-link :to="{name: link.name}" class="ps-2 fs-5">{{ link.title }}</router-link></li>
-        </ul>
-        <img class="w-100" :src="'../assets/img/Residenza donna cà.svg'" alt="">
+    <div class="footer">
+        <div class="container">
+            <ul class="d-flex flex-wrap gap-md-5 gap-3 p-md-5 py-4 px-2 justify-content-center m-0">
+                <li v-for="link in links"><router-link :to="{ name: link.name }" class="ps-md-2 fs-6">{{ link.title
+                        }}</router-link></li>
+            </ul>
+        </div>
+        <img class="w-100" :src="'src/assets/img/Residenza donna cà.svg'" alt="">
     </div>
 </template>
 
@@ -56,5 +59,11 @@ span {
 
 img {
     filter: invert(1);
+}
+
+@media screen and ( min-width: 768px ){
+    a {
+        font-size: 1.25rem !important;
+    }
 }
 </style>

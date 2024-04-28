@@ -69,8 +69,9 @@ export default {
 
 .menu-button {
     position: absolute;
-    top: 30px;
-    right: 60px;
+    font-size: .6rem;
+    top: 20px;
+    right: 30px;
     z-index: 1000;
 
     i::before {
@@ -146,5 +147,20 @@ ul {
         font-size: 2.2rem;
         padding-right: 150px;
     }
+}
+
+@media screen and ( min-width: 992px ) {
+    .menu-button {
+    position: absolute;
+    top: 30px;
+    right: 60px;
+    z-index: 1000;
+
+    i::before {
+        transform: scale(2);
+        display: inline-block;
+        color: rgb(255, 255, 255, 0.8);
+    }
+}
 }
 </style>

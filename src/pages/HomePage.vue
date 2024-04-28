@@ -28,7 +28,7 @@ export default {
 
 <template>
     <section class="position-relative d-flex hero">
-        <h1 class="py-3 position-absolute start-50 translate-middle">RESIDENZA DONNA CÀ</h1>
+        <h1 class="py-3 position-absolute translate-middle w-100">RESIDENZA DONNA CÀ</h1>
         <div class="hero-1">
         </div>
         <div class="hero-2"></div>
@@ -36,7 +36,7 @@ export default {
     <section>
         <div class="my-container d-flex flex-column">
             <img :src="getImgPath('../assets/img/Group-15.webp')" alt="">
-            <p class="py-4 m-0"><strong>Sogni un rifugio di pace e bellezza dove vivere una vacanza da sogno?</strong>
+            <p class="py-4 m-0"><strong>Sogni un rifugio di pace e bellezza dove vivere una vacanza da sogno?</strong><br>
                 Residenza Donnaca ti accoglie nel cuore della Costa degli Dei, a Capo Vaticano, in Calabria, con le sue
                 due incantevoli villette: Villa Aurelia e Villa dei Pini.</p>
             <p class="py-4 m-0">Immergiti nella quiete di un'oasi privata, avvolto dal profumo dei pini e accarezzato
@@ -63,21 +63,28 @@ export default {
     <section class="position-relative py-5">
         <img class="position-absolute start-0 decoration" :src="getImgPath('../assets/img/Layer 4 1.webp')" alt="">
         <div class="container position-relative villas">
-            <div class="d-flex flex-column ">
-                <div>
-                    <h2 class="py-5">LE NOSTRE VILLE</h2>
+            <div class="d-flex flex-column">
+                <div class="">
+                    <h2 class="py-5 text-center text-lg-start ps-5">LE NOSTRE VILLE</h2>
                 </div>
-                <div class="d-flex justify-content-between border-top border-bottom py-5">
-                    <div class="w-50 d-flex">
-                        <span>01</span>
+                <div class="border-top border-bottom py-5 row">
+                    <div class="d-flex flex-column align-items-center justify-content-center gap-1 d-lg-none">
+                        <h3>VILLA DEI PINI</h3>
+                        <span>JOPPOLO, ITALIA</span>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center d-lg-none">
+                        <img class="py-3" :src="getImgPath('../assets/img/IMG_9912.webp')" alt="">
+                    </div>
+                    <div class="col-12 col-lg-6 d-none d-lg-flex">
+                        <span class="align-self-start">01</span>
                         <img class="ps-5" :src="getImgPath('../assets/img/IMG_9912.webp')" alt="">
                     </div>
-                    <div class="w-50 d-flex flex-column justify-content-evenly align-items-start">
-                        <div class="d-flex align-items-center gap-4">
+                    <div class="d-flex flex-column justify-content-evenly align-items-center align-items-lg-start col-12 col-lg-6 ps-lg-5 ps-xxl-0">
+                        <div class="align-items-center gap-4 d-none d-lg-flex">
                             <h3>VILLA DEI PINI</h3>
                             <span>JOPPOLO, ITALIA</span>
                         </div>
-                        <p class=" py-4">
+                        <p class=" py-4 col-12 text-center text-lg-start">
                             Villa Dei Pini sorge a Ioppolo e offre sistemazioni climatizzate con patio. Questa struttura
                             fronte mare vanta l'accesso a un balcone, un parcheggio privato gratuito e il WiFi
                             gratuito...
@@ -87,23 +94,30 @@ export default {
                         </span>
                     </div>
                 </div>
-                <div class="d-flex justify-content-between py-5">
-                    <div class="w-50 d-flex">
-                        <span>02</span>
-                        <img class="ps-5" :src="getImgPath('../assets/img/IMG_9843.webp')" alt="">
+                <div class="border-top py-5 row">
+                    <div class="d-flex flex-column align-items-center justify-content-center gap-1 d-lg-none">
+                        <h3>VILLA AURELIA</h3>
+                        <span>JOPPOLO, ITALIA</span>
                     </div>
-                    <div class="w-50 d-flex flex-column justify-content-evenly align-items-start">
-                        <div class="d-flex align-items-center gap-4">
+                    <div class="col-12 d-flex justify-content-center d-lg-none">
+                        <img class="py-3" :src="getImgPath('../assets/img/IMG_9912.webp')" alt="">
+                    </div>
+                    <div class="col-12 col-lg-6 d-none d-lg-flex">
+                        <span class="align-self-start">02</span>
+                        <img class="ps-5" :src="getImgPath('../assets/img/IMG_9912.webp')" alt="">
+                    </div>
+                    <div class="d-flex flex-column justify-content-evenly align-items-center align-items-lg-start col-12 col-lg-6 ps-lg-5 ps-xxl-0">
+                        <div class="align-items-center gap-4 d-none d-lg-flex">
                             <h3>VILLA AURELIA</h3>
                             <span>JOPPOLO, ITALIA</span>
                         </div>
-                        <p class=" py-4">
+                        <p class=" py-4 col-12 text-center text-lg-start">
                             Villa Aurelia ti accoglie a Ioppolo vicino al mare cristallino, offre relax con terrazza
                             vista mare, cucina attrezzata e giardino con barbecue. Ideale per famiglie, coppie e chi
                             cerca benessere...
                         </p>
                         <span class="button">
-                            <router-link :to="{name: 'villa aurelia'}" class="">DETTAGLI</router-link>
+                            <router-link to="villa aurelia" class="">DETTAGLI</router-link>
                         </span>
                     </div>
                 </div>
@@ -121,19 +135,26 @@ export default {
         <div class="container position-relative villas">
             <div class="d-flex flex-column ">
                 <div>
-                    <h2 class="py-5">SPIAGGIE CONSIGLIATE</h2>
+                    <h2 class="py-5  text-center text-lg-start ps-lg-5">SPIAGGIE <br class="d-md-none"> CONSIGLIATE</h2>
                 </div>
-                <div class="d-flex justify-content-between border-top border-bottom py-5">
-                    <div class="w-50 d-flex">
-                        <span>01</span>
+                <div class="border-top border-bottom py-5 row">
+                    <div class="d-flex flex-column align-items-center justify-content-center gap-1 d-lg-none">
+                        <h3>SPIAGGIA DI COCCORINO</h3>
+                        <span>JOPPOLO, ITALIA</span>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center d-lg-none">
+                        <img class="py-3" :src="getImgPath('../assets/img/WhatsApp Image 2024-04-22 at 12.18.08 (1).webp')" alt="">
+                    </div>
+                    <div class="col-12 col-lg-6 d-none d-lg-flex">
+                        <span class="align-self-start">01</span>
                         <img class="ps-5" :src="getImgPath('../assets/img/WhatsApp Image 2024-04-22 at 12.18.08 (1).webp')" alt="">
                     </div>
-                    <div class="w-50 d-flex flex-column justify-content-evenly align-items-start">
-                        <div class="d-flex align-items-center gap-4">
+                    <div class="d-flex flex-column justify-content-evenly align-items-center align-items-lg-start col-12 col-lg-6 ps-lg-5 ps-xxl-0">
+                        <div class="align-items-center gap-4 d-none d-lg-flex">
                             <h3>SPIAGGIA DI COCCORINO</h3>
-                            <span>COCCORINO, ITALIA</span>
+                            <span>JOPPOLO, ITALIA</span>
                         </div>
-                        <p class=" py-4">
+                        <p class=" py-4 col-12 text-center text-lg-start">
                             La spiaggia è denominata Le Saline, nella Baia del Corsaro. Molto tempo addietro in questa zona c’erano delle saline, per la produzione di sale è una spiaggia in parte sabbiosa ed in parte con sassi di piccole e medie dimensioni....
                         </p>
                         <span class="button">
@@ -141,17 +162,24 @@ export default {
                         </span>
                     </div>
                 </div>
-                <div class="d-flex justify-content-between py-5">
-                    <div class="w-50 d-flex">
-                        <span>02</span>
+                <div class="border-top border-bottom py-5 row">
+                    <div class="d-flex flex-column align-items-center justify-content-center gap-1 d-lg-none">
+                        <h3>SPIAGGIA DI GROTTICELLE</h3>
+                        <span>CAPO VATICANO, ITALIA</span>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center d-lg-none">
+                        <img class="py-3" :src="getImgPath('../assets/img/spiaggia di grotticelle.webp')" alt="">
+                    </div>
+                    <div class="col-12 col-lg-6 d-none d-lg-flex">
+                        <span class="align-self-start">02</span>
                         <img class="ps-5" :src="getImgPath('../assets/img/spiaggia di grotticelle.webp')" alt="">
                     </div>
-                    <div class="w-50 d-flex flex-column justify-content-evenly align-items-start">
-                        <div class="d-flex align-items-center gap-4">
+                    <div class="d-flex flex-column justify-content-evenly align-items-center align-items-lg-start col-12 col-lg-6 ps-lg-5 ps-xxl-0">
+                        <div class="align-items-center gap-4 d-none d-lg-flex">
                             <h3>SPIAGGIA DI GROTTICELLE</h3>
                             <span>CAPO VATICANO, ITALIA</span>
                         </div>
-                        <p class=" py-4">
+                        <p class=" py-4 col-12 text-center text-lg-start">
                             La spiaggia di Grotticelle è costituita da tre piccole spiagge di sabbia chiara e sottile lambite da un mare azzurro e cristallino. Il fondale sabbioso davanti alla spiaggia diventa invece roccioso intorno agli scogli, e ospita una ricca e variegata flora e fauna subacquea...
                         </p>
                         <span class="button">
@@ -159,17 +187,24 @@ export default {
                         </span>
                     </div>
                 </div>
-                <div class="d-flex justify-content-between py-5 border-top">
-                    <div class="w-50 d-flex">
-                        <span>03</span>
-                        <img class="ps-5" :src="getImgPath('../assets/img/tono.webp')" alt="">
+                <div class="border-top py-5 row">
+                    <div class="d-flex flex-column align-items-center justify-content-center gap-1 d-lg-none">
+                        <h3>SPIAGGIA DEL TONO</h3>
+                        <span>RICADI, ITALIA</span>
                     </div>
-                    <div class="w-50 d-flex flex-column justify-content-evenly align-items-start">
-                        <div class="d-flex align-items-center gap-4">
+                    <div class="col-12 d-flex justify-content-center d-lg-none">
+                        <img class="py-3" :src="getImgPath('../assets/img/IMG_9912.webp')" alt="">
+                    </div>
+                    <div class="col-12 col-lg-6 d-none d-lg-flex">
+                        <span class="align-self-start">03</span>
+                        <img class="ps-5" :src="getImgPath('../assets/img/IMG_9912.webp')" alt="">
+                    </div>
+                    <div class="d-flex flex-column justify-content-evenly align-items-center align-items-lg-start col-12 col-lg-6 ps-lg-5 ps-xxl-0">
+                        <div class="align-items-center gap-4 d-none d-lg-flex">
                             <h3>SPIAGGIA DEL TONO</h3>
                             <span>RICADI, ITALIA</span>
                         </div>
-                        <p class=" py-4">
+                        <p class=" py-4 col-12 text-center text-lg-start">
                             E’ una grandissima spiaggia con sabbia bianchissima e mare cristallino, dotata inoltre di tutti i servizi e comodità. Si affaccia su mare aperto con una visuale diretta su Stromboli e il resto delle Isole Eolie...
                         </p>
                         <span class="button">
@@ -198,17 +233,18 @@ h1 {
     font-family: "Imbue", serif;
     font-optical-sizing: auto;
     color: white;
-    font-size: 9vw;
+    font-size: 15vw;
     font-weight: 90;
-    top: 150px;
+    top: 100px;
+    left: 61%;
     z-index: 999;
 }
 
 .hero-1 {
     width: 50vw;
-    height: 100vh;
+    height: 60vh;
     background-image: url(../assets/img/beautiful-italian-town-of-tropea-wallpaper.webp);
-    background-position: bottom;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     // transform: rotateY(180deg);
@@ -216,9 +252,9 @@ h1 {
 
 .hero-2 {
     width: 50vw;
-    height: 100vh;
+    height: 60vh;
     background-image: url('../assets/img/praia\ i\ focu.webp');
-    background-position: left;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     transform: rotateY(180deg);
@@ -226,7 +262,7 @@ h1 {
 
 .my-container {
     max-width: 600px;
-    width: 40%;
+    width: 80%;
     margin: 120px auto;
 
     img {
@@ -242,7 +278,7 @@ h1 {
         max-width: 100%;
         word-wrap: break-word;
         text-align: center;
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-style: mixed;
         line-height: 25px;
     }
@@ -261,13 +297,13 @@ h1 {
         color: white;
 
         .subcontainer {
-            width: 60%;
+            width: 90%;
             margin: 0 auto;
             word-wrap: break-word;
             text-align: center;
 
             p {
-                font-size: 1.2rem;
+                font-size: 1rem;
                 line-height: 25px;
             }
 
@@ -275,7 +311,7 @@ h1 {
                 font-family: "Imbue", serif;
                 font-optical-sizing: auto;
                 color: white;
-                font-size: 3.5rem;
+                font-size: 3rem;
                 font-weight: 100;
             }
         }
@@ -339,5 +375,70 @@ h1 {
     }
 
 
+}
+
+@media screen and ( min-width: 768px ){
+    .subcontainer {
+            width: 60%;
+            margin: 0 auto;
+            word-wrap: break-word;
+            text-align: center;
+
+            p {
+                font-size: 1.2rem;
+                line-height: 25px;
+            }
+
+            h2 {
+                font-family: "Imbue", serif;
+                font-optical-sizing: auto;
+                color: white;
+                font-size: 3.5rem;
+                font-weight: 100;
+            }
+        }
+}
+
+@media screen and ( min-width: 992px ){
+    .hero::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent, rgb(255, 255, 255, 0.6), rgb(255, 255, 255));
+    z-index: 1000;
+}
+
+h1 {
+    font-family: "Imbue", serif;
+    font-optical-sizing: auto;
+    color: white;
+    font-size: 12vw;
+    font-weight: 90;
+    top: 150px;
+    left: 70%;
+    z-index: 999;
+}
+
+.hero-1 {
+    width: 50vw;
+    height: 100vh;
+    background-image: url(../assets/img/beautiful-italian-town-of-tropea-wallpaper.webp);
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    // transform: rotateY(180deg);
+}
+
+.hero-2 {
+    width: 50vw;
+    height: 100vh;
+    background-image: url('../assets/img/praia\ i\ focu.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: rotateY(180deg);
+}
 }
 </style>
