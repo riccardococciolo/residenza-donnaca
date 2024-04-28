@@ -19,7 +19,7 @@ export default {
             this.currentSlide = (this.currentSlide + 1) % this.villa.gallery.length;
         },
         getImgPath(img) {
-            return new URL(`${img}`, import.meta.url).href
+            return new URL(img, import.meta.url).href
         },
         toggleZoom() {
             return this.zoom = !this.zoom;

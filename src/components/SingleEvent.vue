@@ -1,4 +1,6 @@
 <script>
+
+
 export default {
     props: {
         num: String,
@@ -17,9 +19,12 @@ export default {
     },
     methods: {
         getImgPath(img) {
-            return new URL(`${img}`, import.meta.url).href
+            return new URL(this.img, import.meta.url).href
         },
-    }
+        setSrc(img) {
+            document.getElementById('image').src = this.getImgPath(img);
+        }
+    },
 }
 </script>
 
@@ -28,7 +33,7 @@ export default {
         <div class="d-flex justify-content-between py-5">
             <div class="w-50 d-flex">
                 <span>{{ num }}</span>
-                <img class="ps-5" :src="getImgPath(img)" alt="">
+                <img class="ps-5"  :src="getImgPath(img)" alt="">
             </div>
             <div class="w-50 d-flex flex-column justify-content-evenly align-items-start">
                 <div class="d-flex align-items-center gap-4">

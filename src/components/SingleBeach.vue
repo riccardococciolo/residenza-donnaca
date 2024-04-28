@@ -10,7 +10,7 @@ export default {
     },
     methods: {
         getImgPath(img) {
-            return new URL(`${img}`, import.meta.url).href
+            return new URL(img, import.meta.url).href
         },
     }
 }

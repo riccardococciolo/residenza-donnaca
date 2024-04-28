@@ -8,7 +8,7 @@ export default {
       
     }
   },
-  components: { Footer, Navbar }
+  components: { Footer, Navbar, }
 }
 </script>
 

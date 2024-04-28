@@ -15,12 +15,12 @@ export default {
     },
     methods: {
         getDecorationPath(img) {
-            return new URL(`${img}`, import.meta.url).href
+            return new URL(img, import.meta.url).href
         },
     },
     computed: {
         getImgPath() {
-            return new URL(`${this.img}`, import.meta.url).href
+            return new URL(this.img, import.meta.url).href
         },
     },
     mounted() {
@@ -32,7 +32,7 @@ export default {
 <template>
     <div class="box d-flex flex-column justify-content-between align-items-center"
         :style="{ backgroundImage: 'url(' + imgPath + ')' }">
-        <img class="position-absolute decoration" :src="getDecorationPath('../assets/img/Layer 4 5 (1).png')" alt="">
+        <img class="position-absolute decoration" :src="getDecorationPath('../assets/img/Layer 4 5 (1).webp')" alt="">
         <h2 class="text-center">{{ type }}</h2>
         <div class="d-flex flex-column text-white align-items-center">
             <span class="index pb-2">{{ date }}</span>
