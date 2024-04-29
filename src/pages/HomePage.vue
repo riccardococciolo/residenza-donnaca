@@ -28,7 +28,7 @@ export default {
 
 <template>
     <section class="position-relative d-flex hero">
-        <h1 class="py-3 position-absolute translate-middle w-100">RESIDENZA DONNA CÀ</h1>
+        <h1 class="py-3 position-absolute translate-middle w-100 text-center">RESIDENZA DONNA CÀ</h1>
         <div class="hero-1">
         </div>
         <div class="hero-2"></div>
@@ -236,7 +236,7 @@ h1 {
     font-size: 15vw;
     font-weight: 90;
     top: 100px;
-    left: 61%;
+    left: 50%;
     z-index: 999;
 }
 
@@ -414,10 +414,10 @@ h1 {
     font-family: "Imbue", serif;
     font-optical-sizing: auto;
     color: white;
-    font-size: 12vw;
+    font-size: 11vw;
     font-weight: 90;
     top: 150px;
-    left: 70%;
+    left: 50%;
     z-index: 999;
 }
 

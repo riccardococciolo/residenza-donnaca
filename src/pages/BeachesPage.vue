@@ -38,21 +38,44 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-    .wrapper {
+.wrapper {
     width: 100%;
-    height: 50vh;
-    background-image: url("../assets/img/francesco-liotti-jz-cyd5uiv0-unsplash-1.webp");
+    height: 70vh;
+    background-image: url("../assets/img/Mask group (2).webp");
     background-size: cover;
-    background-position: center;
+    background-position-x: -250px;
+    background-repeat: no-repeat;
     flex-wrap: wrap;
-    align-items: end;
+    align-items: center;
+    justify-content: center;
 
     h2 {
         font-family: "Imbue", serif;
         font-optical-sizing: auto;
         color: white;
-        font-size: 4rem;
+        font-size: 6rem;
         font-weight: 100;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .wrapper {
+        width: 100%;
+        height: 50vh;
+        background-image: url("../assets/img/Mask group (2).webp");
+        background-size: cover;
+        background-position: center;
+        flex-wrap: wrap;
+        align-items: end;
+        justify-content: start;
+
+        h2 {
+            font-family: "Imbue", serif;
+            font-optical-sizing: auto;
+            color: white;
+            font-size: 4rem;
+            font-weight: 100;
+        }
     }
 }
 </style>

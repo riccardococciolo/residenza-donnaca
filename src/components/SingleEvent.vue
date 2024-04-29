@@ -29,26 +29,31 @@ export default {
 </script>
 
 <template>
-    <div :id="id">
-        <div class="d-flex justify-content-between py-5">
-            <div class="w-50 d-flex">
-                <span>{{ num }}</span>
-                <img class="ps-5"  :src="getImgPath(img)" alt="">
+    <div class="py-5 row">
+        <div class="d-flex flex-column align-items-center justify-content-center gap-1 d-lg-none">
+            <h3>{{ name }}</h3>
+            <span>{{ date }}</span>
+        </div>
+        <div class="col-12 d-flex justify-content-center d-lg-none">
+            <img class="py-3" :src="getImgPath(img)" alt="">
+        </div>
+        <div class="col-12 col-lg-6 d-none d-lg-flex">
+            <span class="align-self-start">{{ num }}</span>
+            <img class="ps-5" :src="getImgPath(img)" alt="">
+        </div>
+        <div
+            class="d-flex flex-column justify-content-evenly align-items-center align-items-lg-start col-12 col-lg-6 ps-lg-5 ps-xxl-0">
+            <div class="align-items-center gap-4 d-none d-lg-flex">
+                <h3>{{ name }}</h3>
+                <span>{{ date }}</span>
             </div>
-            <div class="w-50 d-flex flex-column justify-content-evenly align-items-start">
-                <div class="d-flex align-items-center gap-4">
-                    <h3>{{ name }}</h3>
-                    <span>{{ date }}</span>
-                </div>
-                <p class=" py-4">
-                    {{ description }}
-                </p>
-                <div>
-                    <a :href="link"><span class="button">GOOGLE MAPS</span></a>
-                    <span class="px-5">{{ city }}</span>
-                </div>
-
-            </div>
+            <p class=" py-4 col-12 text-center text-lg-start">
+                {{ description }}
+            </p>
+            <span>
+                <a :href="link"><span class="button">GOOGLE MAPS</span></a>
+                <span class="px-5">{{ city }}</span>
+            </span>
         </div>
     </div>
 </template>

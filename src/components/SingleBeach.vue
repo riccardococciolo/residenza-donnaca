@@ -17,7 +17,7 @@ export default {
 </script>
 
 <template>
-    <div>
+    <!-- <div>
         <div class="py-5 w-100">
             <div class="w-100">
                 <img class="" :src="getImgPath(beach.img)" alt="">
@@ -40,6 +40,34 @@ export default {
                 </div>
             </div>
 
+        </div>
+    </div> -->
+    <div class="py-5 row">
+        <div class="d-flex flex-column align-items-center justify-content-center gap-1 d-lg-none">
+            <h3>{{ beach.name }}</h3>
+            <span>{{ beach.city }}</span>
+        </div>
+        <div class="col-12 d-flex justify-content-center d-lg-none">
+            <img class="py-3" :src="getImgPath(beach.img)" alt="">
+        </div>
+        <div class="col-12 d-none d-lg-flex">
+            <img class="" :src="getImgPath(beach.img)" alt="">
+        </div>
+        <div class="pt-4 d-flex justify-content-center col-12 row">
+            <div class="col-12 col-lg-6 d-flex flex-column justify-content-evenly align-items-start">
+                <div class="d-flex align-items-center gap-4  d-none d-lg-flex">
+                    <h3>{{ beach.name }}</h3>
+                    <span>{{ beach.city }}</span>
+                </div>
+                <p class=" py-lg-4  text-center text-lg-start">
+                    {{ beach.description }}
+                </p>
+            </div>
+            <div class="col-12 col-lg-6 ps-lg-5">
+                <iframe frameborder="0" allowfullscreen="allowfullscreen" :src="beach.link" width="100%" height="100%"
+                    style="border:0;" loading="auto">
+                </iframe>
+            </div>
         </div>
     </div>
 </template>

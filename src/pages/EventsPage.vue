@@ -34,7 +34,8 @@ export default {
             <div class="border-top py-3 position-relative" v-for="event in events">
                 <img :src="getImgPath('../assets/img/Layer 4 1.webp')" alt="">
                 <SingleEvent :type="event.type" :img="event.img" :date="event.date" :name="event.name"
-                    :link="event.link" :city="event.city" :num="event.num" :description="event.description" :id="event.id" />
+                    :link="event.link" :city="event.city" :num="event.num" :description="event.description"
+                    :id="event.id" />
             </div>
         </div>
     </div>
@@ -43,25 +44,54 @@ export default {
 <style lang="scss" scoped>
 .wrapper {
     width: 100%;
-    height: 50vh;
+    height: 70vh;
     background-image: url("../assets/img/Mask group (2).webp");
     background-size: cover;
-    background-position: center;
+    background-position-x: -250px;
+    background-repeat: no-repeat;
     flex-wrap: wrap;
-    align-items: end;
+    align-items: center;
+    justify-content: center;
 
     h2 {
         font-family: "Imbue", serif;
         font-optical-sizing: auto;
         color: white;
-        font-size: 4rem;
+        font-size: 6rem;
         font-weight: 100;
     }
 }
 
 img {
     position: absolute;
-    top: 60px;
-    left: -100px;
+    top: 50px;
+    left: -30px;
+}
+
+@media screen and (min-width: 992px) {
+    .wrapper {
+        width: 100%;
+        height: 50vh;
+        background-image: url("../assets/img/Mask group (2).webp");
+        background-size: cover;
+        background-position: center;
+        flex-wrap: wrap;
+        align-items: end;
+        justify-content: start;
+
+        h2 {
+            font-family: "Imbue", serif;
+            font-optical-sizing: auto;
+            color: white;
+            font-size: 4rem;
+            font-weight: 100;
+        }
+    }
+
+    img {
+        position: absolute;
+        top: 60px;
+        left: -100px;
+    }
 }
 </style>
