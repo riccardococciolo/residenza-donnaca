@@ -41,9 +41,9 @@ export default {
 .wrapper {
     width: 100%;
     height: 70vh;
-    background-image: url("../assets/img/Mask group (2).webp");
+    background-image: url("../assets/img/francesco-liotti-jz-cyd5uiv0-unsplash-1.webp");
     background-size: cover;
-    background-position-x: -250px;
+    background-position-x: -700px;
     background-repeat: no-repeat;
     flex-wrap: wrap;
     align-items: center;
@@ -62,7 +62,7 @@ export default {
     .wrapper {
         width: 100%;
         height: 50vh;
-        background-image: url("../assets/img/Mask group (2).webp");
+        background-image: url("../assets/img/francesco-liotti-jz-cyd5uiv0-unsplash-1.webp");
         background-size: cover;
         background-position: center;
         flex-wrap: wrap;

@@ -100,11 +100,11 @@ export default {
                         <span>JOPPOLO, ITALIA</span>
                     </div>
                     <div class="col-12 d-flex justify-content-center d-lg-none">
-                        <img class="py-3" :src="getImgPath('../assets/img/IMG_9912.webp')" alt="">
+                        <img class="py-3" :src="getImgPath('../assets/img/IMG_9843.webp')" alt="">
                     </div>
                     <div class="col-12 col-lg-6 d-none d-lg-flex">
                         <span class="align-self-start">02</span>
-                        <img class="ps-5" :src="getImgPath('../assets/img/IMG_9912.webp')" alt="">
+                        <img class="ps-5" :src="getImgPath('../assets/img/IMG_9843.webp')" alt="">
                     </div>
                     <div class="d-flex flex-column justify-content-evenly align-items-center align-items-lg-start col-12 col-lg-6 ps-lg-5 ps-xxl-0">
                         <div class="align-items-center gap-4 d-none d-lg-flex">
@@ -193,11 +193,11 @@ export default {
                         <span>RICADI, ITALIA</span>
                     </div>
                     <div class="col-12 d-flex justify-content-center d-lg-none">
-                        <img class="py-3" :src="getImgPath('../assets/img/IMG_9912.webp')" alt="">
+                        <img class="py-3" :src="getImgPath('../assets/img/tono.webp')" alt="">
                     </div>
                     <div class="col-12 col-lg-6 d-none d-lg-flex">
                         <span class="align-self-start">03</span>
-                        <img class="ps-5" :src="getImgPath('../assets/img/IMG_9912.webp')" alt="">
+                        <img class="ps-5" :src="getImgPath('../assets/img/tono.webp')" alt="">
                     </div>
                     <div class="d-flex flex-column justify-content-evenly align-items-center align-items-lg-start col-12 col-lg-6 ps-lg-5 ps-xxl-0">
                         <div class="align-items-center gap-4 d-none d-lg-flex">

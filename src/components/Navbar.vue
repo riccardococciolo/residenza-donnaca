@@ -65,6 +65,7 @@ export default {
     right: 40px;
     font-size: 2rem;
     color: white;
+    width: 50px;
 }
 
 .menu-button {

@@ -53,7 +53,7 @@ export default {
         <div class="col-12 d-none d-lg-flex">
             <img class="" :src="getImgPath(beach.img)" alt="">
         </div>
-        <div class="pt-4 d-flex justify-content-center col-12 row">
+        <div class="pt-4 d-flex justify-content-center col-12 row p-0 m-auto">
             <div class="col-12 col-lg-6 d-flex flex-column justify-content-evenly align-items-start">
                 <div class="d-flex align-items-center gap-4  d-none d-lg-flex">
                     <h3>{{ beach.name }}</h3>
