@@ -1,18 +1,19 @@
 <script>
+import { DateTime } from 'luxon';
 import EventCard from '../components/EventCard.vue'
 
 export default {
     data() {
         return {
             events: [
-                { type: "SAGRA", img: "../assets/img/cuppo.webp", date: "3 AGOSTO", name: "SAGRA DEL PESCE AZZURRO", link: "...", city: "PARGHELIA" },
-                { type: "SAGRA", img: "../assets/img/pitta.webp", date: "5 AGOSTO", name: "SAGRA DA PITTA CHINA", link: "...", city: "SAN COSTANTINO" },
-                { type: "SAGRA", img: "../assets/img/suriaca.webp", date: "6 AGOSTO", name: "SAGRA DA SUJACA", link: "...", city: "CARIA" },
-                { type: "SAGRA", img: "../assets/img/nduja.webp", date: "8 AGOSTO", name: "SAGRA DELLA NDUJA", link: "...", city: "SPILINGA" },
-                { type: "SAGRA", img: "../assets/img/vino.webp", date: "10 AGOSTO", name: "SAGRA DEL VINO", link: "...", city: "BRATTIRÓ" },
-                { type: "SAGRA", img: "../assets/img/d812e7.webp", date: "13 AGOSTO", name: "SAGRA DELLA CIPOLLA ROSSA", link: "...", city: "RICADI" },
-                { type: "SAGRA", img: "../assets/img/pane.webp", date: "18 AGOSTO", name: "SAGRA DEL PANE", link: "...", city: "STEFANACONI" },
-                { type: "FESTA", img: "../assets/img/cipolla.webp", date: "20 AGOSTO", name: "TROPEA CIPOLLA PARTY", link: "...", city: "PARGHELIA" },
+                { type: "SAGRA", img: "../assets/img/cuppo.webp", date: "3 AGOSTO", time: { month: 8 , day: 3 }, name: "SAGRA DEL PESCE AZZURRO", link: "...", city: "PARGHELIA" },
+                { type: "SAGRA", img: "../assets/img/pitta.webp", date: "5 AGOSTO", time: { month: 8 , day: 5 }, name: "SAGRA DA PITTA CHINA", link: "...", city: "SAN COSTANTINO" },
+                { type: "SAGRA", img: "../assets/img/suriaca.webp", date: "6 AGOSTO", time: { month: 8 , day: 6 }, name: "SAGRA DA SUJACA", link: "...", city: "CARIA" },
+                { type: "SAGRA", img: "../assets/img/nduja.webp", date: "8 AGOSTO", time: { month: 8 , day: 8 }, name: "SAGRA DELLA NDUJA", link: "...", city: "SPILINGA" },
+                { type: "SAGRA", img: "../assets/img/vino.webp", date: "10 AGOSTO", time: { month: 8 , day: 10 }, name: "SAGRA DEL VINO", link: "...", city: "BRATTIRÓ" },
+                { type: "SAGRA", img: "../assets/img/d812e7.webp", date: "13 AGOSTO", time: { month: 8 , day: 13 }, name: "SAGRA DELLA CIPOLLA ROSSA", link: "...", city: "RICADI" },
+                { type: "SAGRA", img: "../assets/img/pane.webp", date: "18 AGOSTO", time: { month: 8 , day: 18 }, name: "SAGRA DEL PANE", link: "...", city: "STEFANACONI" },
+                { type: "FESTA", img: "../assets/img/cipolla.webp", date: "20 AGOSTO", time: { month: 8 , day: 20 }, name: "TROPEA CIPOLLA PARTY", link: "...", city: "PARGHELIA" },
             ],
             decorationPath: 'src/assets/img/Group-15.webp'
         }
@@ -21,6 +22,32 @@ export default {
         getImgPath(img) {
             return new URL(img, import.meta.url).href
         },
+        isPastDate(time) {
+            const { month, day } = DateTime.now().toObject();
+            return time.month < month && time.day <= day;
+        },
+        eventScroll(events) {
+            let pastEvent = 0; 
+
+            const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
+            events.forEach(event => {
+                if (this.isPastDate(event.time)) {
+                    pastEvent++
+                }
+            });
+
+            if (pastEvent > 0 && isMobile) {
+                document.getElementById("events").scrollLeft = 310 * pastEvent;
+            } else {
+                document.getElementById("events").scrollLeft = 310 * (pastEvent - 1);
+            }
+        }
+    },
+    computed: {
+    },
+    mounted() {
+        return this.eventScroll(this.events)
     },
     components: { EventCard }
 }
@@ -124,10 +151,10 @@ export default {
             </div>
         </div>
     </section>
-    <section class="overflow-x-auto w-100 d-flex scroll pt-5">
+    <section id="events" class="overflow-x-auto w-100 d-flex scroll pt-5">
         <div class="" v-for="event in events">
             <EventCard class="" :type="event.type" :img="event.img" :date="event.date" :name="event.name"
-            :link="event.link" :city="event.city" />
+            :link="event.link" :city="event.city" :time="event.time" />
         </div>
     </section>
     <section class="position-relative py-5">

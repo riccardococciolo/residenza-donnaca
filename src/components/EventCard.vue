@@ -1,4 +1,7 @@
 <script>
+
+import { DateTime } from 'luxon';
+
 export default {
     props: {
         type: String,
@@ -7,21 +10,37 @@ export default {
         name: String,
         link: String,
         city: String,
+        time: Object,
     },
     data() {
         return {
             imgPath: "",
+            now: DateTime.now(),
         }
     },
     methods: {
         getDecorationPath(img) {
             return new URL(img, import.meta.url).href
         },
+        isPastDate(time) {
+            const { month, day } = DateTime.now().toObject();
+            return time.month < month && time.day <= day;
+        },
+        isActualDate(time) {
+            const { month, day } = DateTime.now().toObject();
+            return time.month === month && time.day === day;
+        }
     },
     computed: {
         getImgPath() {
             return new URL(this.img, import.meta.url).href
         },
+        pastDate() {
+            return this.isPastDate(this.time)
+        },
+        actualDate() {
+            return this.isActualDate(this.time);
+        }
     },
     mounted() {
         this.imgPath = this.getImgPath;
@@ -30,8 +49,9 @@ export default {
 </script>
 
 <template>
-    <div class="box d-flex flex-column justify-content-between align-items-center"
+    <div class="box d-flex flex-column justify-content-between align-items-center position-relative"
         :style="{ backgroundImage: 'url(' + imgPath + ')' }">
+        <div :class="{ 'overlay d-block': pastDate, 'highlighted d-block': actualDate }" class="none"></div>
         <img class="position-absolute decoration" :src="getDecorationPath('../assets/img/Layer 4 5 (1).webp')" alt="">
         <h2 class="text-center">{{ type }}</h2>
         <div class="d-flex flex-column text-white align-items-center">
@@ -46,6 +66,32 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+
+.none {
+    display: none;
+}
+
+.overlay {
+    background-color: rgb(0, 0, 0, .5);
+    width: 100%;
+    height: 100% !important;
+    top: 0px;
+    height: 0px;
+    position: absolute;
+    z-index: 888;
+}
+
+.highlighted {
+    background-color: rgb(255, 255, 255, .1);
+    border: 5px solid #587E52;
+    width: 100%;
+    height: 100% !important;
+    top: 0px;
+    height: 0px;
+    position: absolute;
+    z-index: 888;
+}
+
 .box {
     position: relative;
     height: 500px;
@@ -107,6 +153,7 @@ export default {
         border: 1px solid rgb(213, 213, 213);
         transition: background-color 0.5s ease-in-out;
         backdrop-filter: blur(6px);
+        z-index: 9999;
 
         &:hover {
             background-color: #587E52;
