@@ -15,7 +15,7 @@ export default {
                 { type: "SAGRA", img: "../assets/img/pane.webp", date: "18 AGOSTO", time: { month: 8 , day: 18 }, name: "SAGRA DEL PANE", link: "...", city: "STEFANACONI" },
                 { type: "FESTA", img: "../assets/img/cipolla.webp", date: "20 AGOSTO", time: { month: 8 , day: 20 }, name: "TROPEA CIPOLLA PARTY", link: "...", city: "PARGHELIA" },
             ],
-            decorationPath: 'src/assets/img/Group-15.webp'
+            decorationPath: '../assets/img/Group-15.webp'
         }
     },
     methods: {
@@ -62,14 +62,14 @@ export default {
     </section>
     <section>
         <div class="my-container d-flex flex-column">
-            <img :src="getImgPath('../assets/img/Group-15.webp')" alt="">
+            <img src="../assets/img/Group-15.webp" alt="">
             <p class="py-4 m-0"><strong>Sogni un rifugio di pace e bellezza dove vivere una vacanza da sogno?</strong><br>
                 Residenza Donnaca ti accoglie nel cuore della Costa degli Dei, a Capo Vaticano, in Calabria, con le sue
                 due incantevoli villette: Villa Aurelia e Villa dei Pini.</p>
             <p class="py-4 m-0">Immergiti nella quiete di un'oasi privata, avvolto dal profumo dei pini e accarezzato
                 dalla brezza marina. Lasciati conquistare dai panorami mozzafiato sul Mar Mediterraneo, che si aprono
                 come un dipinto davanti ai tuoi occhi.</p>
-            <img class="reverse" :src="decorationPath" alt="">
+            <img class="reverse" src="../assets/img/Group-15.webp" alt="">
         </div>
     </section>
     <section>

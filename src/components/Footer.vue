@@ -22,7 +22,7 @@ export default {
                         }}</router-link></li>
             </ul>
         </div>
-        <img class="w-100" :src="'src/assets/img/Residenza donna cà.svg'" alt="">
+        <img class="w-100" src="../assets/img/Residenza donna cà.svg" alt="">
     </div>
 </template>
 
