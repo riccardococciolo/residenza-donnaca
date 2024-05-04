@@ -52,7 +52,7 @@ export default {
             </p>
             <span>
                 <a :href="link"><span class="button">GOOGLE MAPS</span></a>
-                <span class="px-5">{{ city }}</span>
+                <span class="ps-5">{{ city }}</span>
             </span>
         </div>
     </div>

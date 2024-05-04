@@ -54,14 +54,14 @@ export default {
         </div>
         <div class="container py-5">
             <div class="row">
-                <div class="col-lg-6 col-12 pb-5 text-center text-lg-start position-relative">
+                <div class="col-lg-6 col-12 pb-4 text-center text-lg-start position-relative border-bottom">
                     <img class="decoration d-md-none" :src="getImgPath('../assets/img/Layer 4 1.webp')" alt="">
                     <h3 class="py-5 pb-lg-4">DESCRIZIONE</h3>
                     <p class="">{{ villa.description }}</p>
                 </div>
-                <div class="col-3 pb-5 d-none d-lg-block">
+                <div class="col-3 pb-5 d-none d-lg-block border-bottom">
                 </div>
-                <div class="col-12 col-lg-3 pb-5 text-center text-lg-start position-relative">
+                <div class="col-12 col-lg-3 pb-5 text-center text-lg-start position-relative border-bottom">
                     <img class="decoration d-md-none" :src="getImgPath('../assets/img/Layer 4 1.webp')" alt="">
                     <h3 class="py-5 pb-lg-4">TIPOLOGIA</h3>
                     <div class="row">
@@ -71,7 +71,7 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="col-12 position-relative gallery-wrapper pb-4">
+                <div class="col-12 position-relative gallery-wrapper pb-4 border-bottom">
                     <img class="decoration d-md-none" :src="getImgPath('../assets/img/Layer 4 1.webp')" alt="">
                     <h3 class="py-5 text-center text-lg-start text-white">GALLERIA</h3>
                     <div class="carousel justify-content-center align-items-center pb-4" :class="{ 'zoom': zoom }">

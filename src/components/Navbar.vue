@@ -41,17 +41,17 @@ export default {
 
 <template class="position-relative">
     <div v-if="isVisible" :class="{ 'slide-enter-active': isVisible, 'slide-leave-active': transitionOut }"
-        class=" pt-5 pt-lg-4 navbar d-flex justify-content-end">
+        class=" pt-4 pt-lg-3 navbar d-flex justify-content-end align-items-end pb-0">
         <div class="close">
             <span @click="toggleClose"><i class="fa-solid fa-xmark"></i></span>
         </div>
-        <ul class=" m-0 py-5 py-lg-4">
+        <ul class=" m-0 py-4 py-lg-4">
             <li class="border-bottom w-100 py-3" v-for="link in links" :key="link.title">
                 <router-link @click="toggleClose" :to="{name: link.name}" class="num">{{ link.num }}</router-link>
                 <router-link @click="toggleClose" :to="{name: link.name}" class="ps-lg-5">{{ link.title }}</router-link>
             </li>
         </ul>
-        <img class="w-100 pt-5 pt-lg-4" src="../assets/img/Residenza donna cà.svg" alt="">
+        <img class="w-100 pt-2 pt-lg-4" src="../assets/img/Residenza donna cà.svg" alt="">
     </div>
     <div v-else class="menu-button">
         <span><i @click="toggleMenu" class="fa-sharp fa-solid fa-bars"></i></span>
@@ -61,8 +61,8 @@ export default {
 <style lang="scss" scoped>
 .close {
     position: absolute;
-    top: 30px;
-    right: 40px;
+    top: 20px;
+    right: 20px;
     font-size: 2rem;
     color: white;
     width: 50px;
@@ -85,6 +85,7 @@ export default {
 .navbar {
     background-color: #587E52;
     width: 100%;
+    height: 90vh;
     position: absolute;
     top: 0px;
     right: 0px;
@@ -121,7 +122,7 @@ export default {
 
 img {
     position: relative;
-    bottom: -8px;
+    bottom: 0px;
     display: block;
 }
 
@@ -134,6 +135,8 @@ ul {
     li {
         font-size: 1.3rem;
         border: black;
+        display: flex;
+        align-items: center;
     }
 
     a {
@@ -146,6 +149,7 @@ ul {
         font-optical-sizing: auto;
         font-weight: 100;
         font-size: 2rem;
+        line-height: 2rem;
         padding-right: 100px;
     }
 }
@@ -162,6 +166,10 @@ ul {
         display: inline-block;
         color: rgb(255, 255, 255, 0.8);
     }
+}
+
+.navbar {
+    height: 100vh;
 }
 
 ul {

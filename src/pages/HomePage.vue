@@ -15,7 +15,7 @@ export default {
                 { type: "SAGRA", img: "../assets/img/pane.webp", date: "18 AGOSTO", time: { month: 8 , day: 18 }, name: "SAGRA DEL PANE", link: "...", city: "STEFANACONI" },
                 { type: "FESTA", img: "../assets/img/cipolla.webp", date: "20 AGOSTO", time: { month: 8 , day: 20 }, name: "TROPEA CIPOLLA PARTY", link: "...", city: "PARGHELIA" },
             ],
-            decorationPath: '../assets/img/Group-15.webp'
+            decorationPath: '../assets/img/group-15.webp'
         }
     },
     methods: {
