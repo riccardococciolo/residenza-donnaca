@@ -48,7 +48,7 @@ export default {
 
 <template>
     <div class="position-relative">
-        <div class="wrapper d-flex py-lg-4 px-lg-5" :style="{ backgroundImage: 'url(' + villa.img + ')' }">
+        <div class="wrapper d-flex py-lg-4 px-lg-5" :style="{ backgroundImage: 'url(' + getImgPath(villa.img) + ')' }">
             <h2>{{ villa.name }}</h2>
             <span class="button mb-4"><a :href="villa.link">PRENOTA SUBITO!</a></span>
         </div>

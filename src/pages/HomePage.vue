@@ -117,7 +117,7 @@ export default {
                             gratuito...
                         </p>
                         <span class="button">
-                            <router-link to="villa dei pini" class="">DETTAGLI</router-link>
+                            <router-link :to="{ name: 'villa dei pini' }" class="">DETTAGLI</router-link>
                         </span>
                     </div>
                 </div>
@@ -144,7 +144,7 @@ export default {
                             cerca benessere...
                         </p>
                         <span class="button">
-                            <router-link to="villa aurelia" class="">DETTAGLI</router-link>
+                            <router-link :to="{ name: 'villa aurelia' }" class="">DETTAGLI</router-link>
                         </span>
                     </div>
                 </div>

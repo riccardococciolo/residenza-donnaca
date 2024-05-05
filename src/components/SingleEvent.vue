@@ -79,6 +79,8 @@ h3 {
     font-family: "Imbue", serif;
     font-optical-sizing: auto;
     font-weight: 150;
+    position: relative;
+    z-index: 99;
 }
 
 p {

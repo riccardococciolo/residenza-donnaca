@@ -16,7 +16,7 @@ export default {
 
 <template>
     <div class="footer">
-        <div class="container">
+        <div class="container px-0">
             <ul class="d-flex flex-wrap gap-md-5 gap-2 p-md-5 py-4 px-1 justify-content-center m-0">
                 <li v-for="link in links"><router-link :to="{ name: link.name }" class="ps-md-2 fs-6">{{ link.title
                         }}</router-link></li>
