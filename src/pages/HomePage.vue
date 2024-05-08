@@ -75,7 +75,7 @@ export default {
             let clutter = ""
 
             splittedText.forEach(function(elem) {
-                clutter += `<span class="d-inline-block">${elem}</span>`
+                clutter += `<span class="d-inline-block" style="min-width: 2vw;">${elem}</span>`
             });
 
             document.querySelector('h1').innerHTML = clutter;
@@ -334,7 +334,7 @@ h1 {
     font-family: "Imbue", serif;
     font-optical-sizing: auto;
     color: white;
-    font-size: 15vw;
+    // font-size: 15vw;
     font-weight: 90;
     top: 100px;
     left: 50%;
