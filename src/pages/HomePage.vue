@@ -69,6 +69,33 @@ export default {
                 }
             })
         },
+        breckText() {
+            let splittedText = document.querySelector('h1').textContent.split("");
+
+            let clutter = ""
+
+            splittedText.forEach(function(elem) {
+                clutter += `<span class="d-inline-block">${elem}</span>`
+            });
+
+            document.querySelector('h1').innerHTML = clutter;
+
+        },
+        titleAnimation() {
+            const random = gsap.utils.random(-100, 100, true);
+
+            gsap.from('h1 span', {
+                x: "random(-150, 150, 5)",
+                y: "random(-150, 150, 5)",
+                duration: 2,
+                autoAlpha: 0,
+                rotation: random,
+                delay: 0,
+                ease: 'power3.out',
+                stagger: .1,
+
+            })
+        }
     },
     computed: {
     },
@@ -79,6 +106,8 @@ export default {
         this.rightInAnimation('#spiaggia-coccorino');
         this.leftInAnimation('#spiaggia-grotticelle');
         this.rightInAnimation('#spiaggia-tono');
+        this.breckText();
+        this.titleAnimation();
     },
     components: { EventCard }
 }

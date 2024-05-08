@@ -46,7 +46,7 @@ export default {
                 duration: 2,
                 autoAlpha: 0,
                 x: 300,
-                ease: 'power3.out',
+                ease: 'power4.out',
                 stagger: .2,
             });
             console.log('va');
