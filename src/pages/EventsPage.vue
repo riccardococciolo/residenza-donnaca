@@ -1,5 +1,8 @@
 <script>
 import SingleEvent from '../components/SingleEvent.vue';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 export default {
     data() {
@@ -20,8 +23,41 @@ export default {
         getImgPath(img) {
             return new URL(`${img}`, import.meta.url).href
         },
+        rightInAnimation(selector) {
+            gsap.from(selector, {
+                x: 500,
+                duration: 2,
+                ease: 'power3.out',
+                autoAlpha: 0,
+                scrollTrigger: {
+                    trigger: selector,
+                }
+            })
+        },
+        leftInAnimation(selector) {
+            gsap.from(selector, {
+                x: -500,
+                duration: 2,
+                ease: 'power3.out',
+                autoAlpha: 0,
+                scrollTrigger: {
+                    trigger: selector,
+                }
+            })
+        },
+    },
+    mounted() {
+        for (let i = 0; i < this.events.length; i++) {
+            if (i % 2 === 0) {
+                this.rightInAnimation(`#event-${i}`)
+            } else {
+                this.leftInAnimation(`#event-${i}`)
+            }
+            
+        }
     },
     components: { SingleEvent }
+    
 }
 </script>
 
@@ -31,11 +67,13 @@ export default {
             <h2>EVENTI</h2>
         </div>
         <div class="container py-5">
-            <div class="border-top py-3 position-relative" v-for="event in events">
+            <div class="border-top py-3 position-relative" v-for="(event, index) in events">
+                <div :id="`event-${index}`">
                 <img :src="getImgPath('../assets/img/Layer 4 1.webp')" alt="">
                 <SingleEvent :type="event.type" :img="event.img" :date="event.date" :name="event.name"
                     :link="event.link" :city="event.city" :num="event.num" :description="event.description"
                     :id="event.id" />
+                </div>
             </div>
         </div>
     </div>

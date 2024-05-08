@@ -1,4 +1,8 @@
 <script>
+import { gsap } from '../../node_modules/gsap'
+import { ScrollTrigger } from '../../node_modules/gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
     props: {
         villa: Object,
@@ -13,10 +17,16 @@ export default {
     },
     methods: {
         prevSlide() {
+            clearInterval(this.autoPlayInterval);
+            this.autoPlay();
             this.currentSlide = (this.currentSlide - 1 + this.villa.gallery.length) % this.villa.gallery.length;
+            this.galleryAnimation('.my-carousel-item');
         },
         nextSlide() {
+            clearInterval(this.autoPlayInterval);
+            this.autoPlay();
             this.currentSlide = (this.currentSlide + 1) % this.villa.gallery.length;
+            this.galleryAnimation('.my-carousel-item');
         },
         getImgPath(img) {
             return new URL(img, import.meta.url).href
@@ -24,23 +34,71 @@ export default {
         toggleZoom() {
             return this.zoom = !this.zoom;
         },
-        startAutoPlay() {
-            this.autoPlayActive = true;
+        autoPlay() {
             if (this.autoPlayActive) {
                 this.autoPlayInterval = setInterval(() => {
                     this.nextSlide();
                 }, 5000);
             }
         },
+        startAutoPlay() {
+            this.autoPlayActive = true;
+            this.autoPlay();
+        },
         stopAutoPlay() {
             this.autoPlayActive = false;
             clearInterval(this.autoPlayInterval);
         },
+        imageBlock(element) {
+            const imageContainer = document.getElementById(element);
+
+            const numCols = 12;
+            const numRows = 5;
+            const totalParts = numCols * numRows;
+            const partWidth = imageContainer.offsetWidth / numCols;
+            const partHeight = imageContainer.offsetHeight / numRows;
+
+            for (let i = 0; i < totalParts; i++) {
+                const part = document.createElement('div');
+                part.classList.add(element);
+                part.style.width = partWidth + 'px';
+                part.style.height = partHeight + 'px';
+                part.style.backgroundColor = `white`;
+                part.style.backgroundSize = `${numCols * 100}% ${numRows * 100}%`;
+                part.style.backgroundPosition = `${-(i % numCols) * 100}% ${-Math.floor(i / numCols) * 100}%`;
+                imageContainer.appendChild(part);
+            }
+        },
+        imageAnimation(element) {
+            gsap.to(element, {
+                duration: 1,
+                scale: 0,
+                y: 40,
+                rotation: 100,
+                ease: "power1.inOut",
+                stagger: {
+                    grid: [5, 12],
+                    from: "center",
+                    amount: 1,
+                }
+            })
+        },
+        galleryAnimation(element) {
+            gsap.from(element, {
+                duration: 1,
+                scale: .5,
+                ease: "power1.inOut",
+            })
+        }
     },
     mounted() {
-        this.startAutoPlay();
+        this.autoPlay();
+        setTimeout(() => {
+            this.imageAnimation('.overlay');
+        }, 100);
+        this.imageBlock('overlay');
     },
-    beforeDestroy() {
+    beforeUnmount() {
         this.stopAutoPlay();
     }
 }
@@ -48,9 +106,13 @@ export default {
 
 <template>
     <div class="position-relative">
-        <div class="wrapper d-flex py-lg-4 px-lg-5" :style="{ backgroundImage: 'url(' + getImgPath(villa.img) + ')' }">
-            <h2>{{ villa.name }}</h2>
-            <span class="button mb-4"><a :href="villa.link">PRENOTA SUBITO!</a></span>
+        <div class="wrapper d-flex py-lg-4 position-relative"
+            :style="{ backgroundImage: 'url(' + getImgPath(villa.img) + ')' }">
+            <div id="overlay" class="row h-100 vw-100 z-4 position-absolute top-0 end-0">
+
+            </div>
+            <h2 class="ps-lg-5">{{ villa.name }}</h2>
+            <span class="z-0 button mb-4 me-lg-5"><a :href="villa.link">PRENOTA SUBITO!</a></span>
         </div>
         <div class="container py-5">
             <div class="row">
@@ -75,10 +137,13 @@ export default {
                     <img class="decoration d-md-none" :src="getImgPath('../assets/img/Layer 4 1.webp')" alt="">
                     <h3 class="py-5 text-center text-lg-start text-white">GALLERIA</h3>
                     <div class="carousel justify-content-center align-items-center pb-4" :class="{ 'zoom': zoom }">
-                        <div class="position-relative" @mouseover="stopAutoPlay" @mouseout="startAutoPlay">
+                        <div class="position-relative">
+                            <div id="overlay-image" class="row h-100 w-100 z-4 position-absolute top-0 image-position">
+
+                            </div>
                             <div v-for="(item, index)  in villa.gallery" :key="index"
                                 :class="{ 'active': index === currentSlide }"
-                                class="my-carousel-item position-relative">
+                                class="my-carousel-item position-relative" @mouseover="stopAutoPlay" @mouseout="startAutoPlay">
                                 <div class="position-relative">
                                     <img :class="{ 'zoom-img': zoom }" :src="getImgPath(item.img)" alt="">
                                     <span class=" position-absolute top-50 left" :class="{ 'left-zoom': zoom }"
@@ -143,6 +208,10 @@ export default {
         width: 100%;
         text-align: center;
     }
+}
+
+.image-position {
+    left: -80px;
 }
 
 .decoration {

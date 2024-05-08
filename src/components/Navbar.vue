@@ -1,4 +1,9 @@
 <script>
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
+
 export default {
     data() {
         return {
@@ -24,37 +29,50 @@ export default {
                 }, 500);
             } else {
                 this.isVisible = !this.isVisible;
+                setTimeout(() => {
+                    this.linkInAnimation();
+                }, 100);
             }
         },
-
         toggleTransition() {
             this.transitionOut = !this.transitionOut;
         },
-
         toggleClose() {
             this.toggleTransition();
             this.toggleMenu();
+        },
+        linkInAnimation() {
+            gsap.from( '.link' , {
+                duration: 2,
+                autoAlpha: 0,
+                x: 300,
+                ease: 'power3.out',
+                stagger: .2,
+            });
+            console.log('va');
         }
+    },
+    mounted() {
     }
 }
 </script>
 
 <template class="position-relative">
     <div v-if="isVisible" :class="{ 'slide-enter-active': isVisible, 'slide-leave-active': transitionOut }"
-        class=" pt-4 pt-lg-3 navbar d-flex justify-content-end align-items-end pb-0">
+        class=" pt-4 pt-lg-3 navbar d-flex justify-content-end align-items-end pb-0 overflow-x-hidden">
         <div class="close">
             <span @click="toggleClose"><i class="fa-solid fa-xmark"></i></span>
         </div>
         <ul class=" m-0 py-4 py-lg-4">
             <li class="border-bottom w-100 py-3" v-for="link in links" :key="link.title">
                 <router-link @click="toggleClose" :to="{name: link.name}" class="num">{{ link.num }}</router-link>
-                <router-link @click="toggleClose" :to="{name: link.name}" class="ps-lg-5">{{ link.title }}</router-link>
+                <router-link @click="toggleClose" :to="{name: link.name}" class="ps-lg-5 link">{{ link.title }}</router-link>
             </li>
         </ul>
         <img class="w-100 pt-2 pt-lg-4" src="../assets/img/Residenza donna cà.svg" alt="">
     </div>
     <div v-else class="menu-button">
-        <span><i @click="toggleMenu" class="fa-sharp fa-solid fa-bars"></i></span>
+        <span ><i @click="toggleMenu" class="fa-sharp fa-solid fa-bars"></i></span>
     </div>
 </template>
 

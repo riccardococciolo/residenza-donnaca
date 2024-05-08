@@ -1,19 +1,23 @@
 <script>
 import { DateTime } from 'luxon';
 import EventCard from '../components/EventCard.vue'
+import { gsap } from '../../node_modules/gsap'
+import { ScrollTrigger } from '../../node_modules/gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
 
 export default {
     data() {
         return {
             events: [
-                { type: "SAGRA", img: "../assets/img/cuppo.webp", date: "3 AGOSTO", time: { month: 8 , day: 3 }, name: "SAGRA DEL PESCE AZZURRO", link: "...", city: "PARGHELIA" },
-                { type: "SAGRA", img: "../assets/img/pitta.webp", date: "5 AGOSTO", time: { month: 8 , day: 5 }, name: "SAGRA DA PITTA CHINA", link: "...", city: "SAN COSTANTINO" },
-                { type: "SAGRA", img: "../assets/img/suriaca.webp", date: "6 AGOSTO", time: { month: 8 , day: 6 }, name: "SAGRA DA SUJACA", link: "...", city: "CARIA" },
-                { type: "SAGRA", img: "../assets/img/nduja.webp", date: "8 AGOSTO", time: { month: 8 , day: 8 }, name: "SAGRA DELLA NDUJA", link: "...", city: "SPILINGA" },
-                { type: "SAGRA", img: "../assets/img/vino.webp", date: "10 AGOSTO", time: { month: 8 , day: 10 }, name: "SAGRA DEL VINO", link: "...", city: "BRATTIRÓ" },
-                { type: "SAGRA", img: "../assets/img/d812e7.webp", date: "13 AGOSTO", time: { month: 8 , day: 13 }, name: "SAGRA DELLA CIPOLLA ROSSA", link: "...", city: "RICADI" },
-                { type: "SAGRA", img: "../assets/img/pane.webp", date: "18 AGOSTO", time: { month: 8 , day: 18 }, name: "SAGRA DEL PANE", link: "...", city: "STEFANACONI" },
-                { type: "FESTA", img: "../assets/img/cipolla.webp", date: "20 AGOSTO", time: { month: 8 , day: 20 }, name: "TROPEA CIPOLLA PARTY", link: "...", city: "PARGHELIA" },
+                { type: "SAGRA", img: "../assets/img/cuppo.webp", date: "3 AGOSTO", time: { month: 8, day: 3 }, name: "SAGRA DEL PESCE AZZURRO", link: "...", city: "PARGHELIA" },
+                { type: "SAGRA", img: "../assets/img/pitta.webp", date: "5 AGOSTO", time: { month: 8, day: 5 }, name: "SAGRA DA PITTA CHINA", link: "...", city: "SAN COSTANTINO" },
+                { type: "SAGRA", img: "../assets/img/suriaca.webp", date: "6 AGOSTO", time: { month: 8, day: 6 }, name: "SAGRA DA SUJACA", link: "...", city: "CARIA" },
+                { type: "SAGRA", img: "../assets/img/nduja.webp", date: "8 AGOSTO", time: { month: 8, day: 8 }, name: "SAGRA DELLA NDUJA", link: "...", city: "SPILINGA" },
+                { type: "SAGRA", img: "../assets/img/vino.webp", date: "10 AGOSTO", time: { month: 8, day: 10 }, name: "SAGRA DEL VINO", link: "...", city: "BRATTIRÓ" },
+                { type: "SAGRA", img: "../assets/img/d812e7.webp", date: "13 AGOSTO", time: { month: 8, day: 13 }, name: "SAGRA DELLA CIPOLLA ROSSA", link: "...", city: "RICADI" },
+                { type: "SAGRA", img: "../assets/img/pane.webp", date: "18 AGOSTO", time: { month: 8, day: 18 }, name: "SAGRA DEL PANE", link: "...", city: "STEFANACONI" },
+                { type: "FESTA", img: "../assets/img/cipolla.webp", date: "20 AGOSTO", time: { month: 8, day: 20 }, name: "TROPEA CIPOLLA PARTY", link: "...", city: "PARGHELIA" },
             ],
             decorationPath: '../assets/img/group-15.webp'
         }
@@ -27,7 +31,7 @@ export default {
             return time.month < month && time.day <= day;
         },
         eventScroll(events) {
-            let pastEvent = 0; 
+            let pastEvent = 0;
 
             const isMobile = window.matchMedia("(max-width: 767px)").matches;
 
@@ -42,18 +46,45 @@ export default {
             } else {
                 document.getElementById("events").scrollLeft = 310 * (pastEvent - 1);
             }
-        }
+        },
+        rightInAnimation(selector) {
+            gsap.from(selector, {
+                x: 500,
+                duration: 2,
+                ease: 'power3.out',
+                autoAlpha: 0,
+                scrollTrigger: {
+                    trigger: selector,
+                }
+            })
+        },
+        leftInAnimation(selector) {
+            gsap.from(selector, {
+                x: -500,
+                duration: 2,
+                ease: 'power3.out',
+                autoAlpha: 0,
+                scrollTrigger: {
+                    trigger: selector,
+                }
+            })
+        },
     },
     computed: {
     },
     mounted() {
-        return this.eventScroll(this.events)
+        this.eventScroll(this.events);
+        this.rightInAnimation('#villa-dei-pini');
+        this.leftInAnimation('#villa-aurelia');
+        this.rightInAnimation('#spiaggia-coccorino');
+        this.leftInAnimation('#spiaggia-grotticelle');
+        this.rightInAnimation('#spiaggia-tono');
     },
     components: { EventCard }
 }
 </script>
 
-<template>
+<template class="overflow-x-hidden">
     <section class="position-relative d-flex hero">
         <h1 class="py-3 position-absolute translate-middle w-100 text-center">RESIDENZA DONNA CÀ</h1>
         <div class="hero-1">
@@ -63,7 +94,8 @@ export default {
     <section>
         <div class="my-container d-flex flex-column">
             <img :src="getImgPath(decorationPath)" alt="">
-            <p class="py-4 m-0"><strong>Sogni un rifugio di pace e bellezza dove vivere una vacanza da sogno?</strong><br>
+            <p class="py-4 m-0"><strong>Sogni un rifugio di pace e bellezza dove vivere una vacanza da
+                    sogno?</strong><br>
                 Residenza Donnaca ti accoglie nel cuore della Costa degli Dei, a Capo Vaticano, in Calabria, con le sue
                 due incantevoli villette: Villa Aurelia e Villa dei Pini.</p>
             <p class="py-4 m-0">Immergiti nella quiete di un'oasi privata, avvolto dal profumo dei pini e accarezzato
@@ -94,7 +126,7 @@ export default {
                 <div class="">
                     <h2 class="py-5 text-center text-lg-start ps-5">LE NOSTRE VILLE</h2>
                 </div>
-                <div class="border-top border-bottom py-5 row">
+                <div id="villa-dei-pini" class="border-top border-bottom py-5 row">
                     <div class="d-flex flex-column align-items-center justify-content-center gap-1 d-lg-none">
                         <h3>VILLA DEI PINI</h3>
                         <span>JOPPOLO, ITALIA</span>
@@ -106,7 +138,8 @@ export default {
                         <span class="align-self-start">01</span>
                         <img class="ps-5" :src="getImgPath('../assets/img/IMG_9912.webp')" alt="">
                     </div>
-                    <div class="d-flex flex-column justify-content-evenly align-items-center align-items-lg-start col-12 col-lg-6 ps-lg-5 ps-xxl-0">
+                    <div
+                        class="d-flex flex-column justify-content-evenly align-items-center align-items-lg-start col-12 col-lg-6 ps-lg-5 ps-xxl-0">
                         <div class="align-items-center gap-4 d-none d-lg-flex">
                             <h3>VILLA DEI PINI</h3>
                             <span>JOPPOLO, ITALIA</span>
@@ -121,7 +154,7 @@ export default {
                         </span>
                     </div>
                 </div>
-                <div class="border-top py-5 row">
+                <div id="villa-aurelia" class="border-top py-5 row">
                     <div class="d-flex flex-column align-items-center justify-content-center gap-1 d-lg-none">
                         <h3>VILLA AURELIA</h3>
                         <span>JOPPOLO, ITALIA</span>
@@ -133,7 +166,8 @@ export default {
                         <span class="align-self-start">02</span>
                         <img class="ps-5" :src="getImgPath('../assets/img/IMG_9843.webp')" alt="">
                     </div>
-                    <div class="d-flex flex-column justify-content-evenly align-items-center align-items-lg-start col-12 col-lg-6 ps-lg-5 ps-xxl-0">
+                    <div
+                        class="d-flex flex-column justify-content-evenly align-items-center align-items-lg-start col-12 col-lg-6 ps-lg-5 ps-xxl-0">
                         <div class="align-items-center gap-4 d-none d-lg-flex">
                             <h3>VILLA AURELIA</h3>
                             <span>JOPPOLO, ITALIA</span>
@@ -154,7 +188,7 @@ export default {
     <section id="events" class="overflow-x-auto w-100 d-flex scroll pt-5">
         <div class="" v-for="event in events">
             <EventCard class="" :type="event.type" :img="event.img" :date="event.date" :name="event.name"
-            :link="event.link" :city="event.city" :time="event.time" />
+                :link="event.link" :city="event.city" :time="event.time" />
         </div>
     </section>
     <section class="position-relative py-5">
@@ -164,32 +198,37 @@ export default {
                 <div>
                     <h2 class="py-5  text-center text-lg-start ps-lg-5">SPIAGGIE <br class="d-md-none"> CONSIGLIATE</h2>
                 </div>
-                <div class="border-top border-bottom py-5 row">
+                <div id="spiaggia-coccorino" class="border-top border-bottom py-5 row">
                     <div class="d-flex flex-column align-items-center justify-content-center gap-1 d-lg-none">
                         <h3>SPIAGGIA DI COCCORINO</h3>
                         <span>JOPPOLO, ITALIA</span>
                     </div>
                     <div class="col-12 d-flex justify-content-center d-lg-none">
-                        <img class="py-3" :src="getImgPath('../assets/img/WhatsApp Image 2024-04-22 at 12.18.08 (1).webp')" alt="">
+                        <img class="py-3"
+                            :src="getImgPath('../assets/img/WhatsApp Image 2024-04-22 at 12.18.08 (1).webp')" alt="">
                     </div>
                     <div class="col-12 col-lg-6 d-none d-lg-flex">
                         <span class="align-self-start">01</span>
-                        <img class="ps-5" :src="getImgPath('../assets/img/WhatsApp Image 2024-04-22 at 12.18.08 (1).webp')" alt="">
+                        <img class="ps-5"
+                            :src="getImgPath('../assets/img/WhatsApp Image 2024-04-22 at 12.18.08 (1).webp')" alt="">
                     </div>
-                    <div class="d-flex flex-column justify-content-evenly align-items-center align-items-lg-start col-12 col-lg-6 ps-lg-5 ps-xxl-0">
+                    <div
+                        class="d-flex flex-column justify-content-evenly align-items-center align-items-lg-start col-12 col-lg-6 ps-lg-5 ps-xxl-0">
                         <div class="align-items-center gap-4 d-none d-lg-flex">
                             <h3>SPIAGGIA DI COCCORINO</h3>
                             <span>JOPPOLO, ITALIA</span>
                         </div>
                         <p class=" py-4 col-12 text-center text-lg-start">
-                            La spiaggia è denominata Le Saline, nella Baia del Corsaro. Molto tempo addietro in questa zona c’erano delle saline, per la produzione di sale è una spiaggia in parte sabbiosa ed in parte con sassi di piccole e medie dimensioni....
+                            La spiaggia è denominata Le Saline, nella Baia del Corsaro. Molto tempo addietro in questa
+                            zona c’erano delle saline, per la produzione di sale è una spiaggia in parte sabbiosa ed in
+                            parte con sassi di piccole e medie dimensioni....
                         </p>
                         <span class="button">
                             <router-link to="/beaches" class="">DETTAGLI</router-link>
                         </span>
                     </div>
                 </div>
-                <div class="border-top border-bottom py-5 row">
+                <div id="spiaggia-grotticelle" class="border-top border-bottom py-5 row">
                     <div class="d-flex flex-column align-items-center justify-content-center gap-1 d-lg-none">
                         <h3>SPIAGGIA DI GROTTICELLE</h3>
                         <span>CAPO VATICANO, ITALIA</span>
@@ -201,20 +240,24 @@ export default {
                         <span class="align-self-start">02</span>
                         <img class="ps-5" :src="getImgPath('../assets/img/spiaggia di grotticelle.webp')" alt="">
                     </div>
-                    <div class="d-flex flex-column justify-content-evenly align-items-center align-items-lg-start col-12 col-lg-6 ps-lg-5 ps-xxl-0">
+                    <div
+                        class="d-flex flex-column justify-content-evenly align-items-center align-items-lg-start col-12 col-lg-6 ps-lg-5 ps-xxl-0">
                         <div class="align-items-center gap-4 d-none d-lg-flex">
                             <h3>SPIAGGIA DI GROTTICELLE</h3>
                             <span>CAPO VATICANO, ITALIA</span>
                         </div>
                         <p class=" py-4 col-12 text-center text-lg-start">
-                            La spiaggia di Grotticelle è costituita da tre piccole spiagge di sabbia chiara e sottile lambite da un mare azzurro e cristallino. Il fondale sabbioso davanti alla spiaggia diventa invece roccioso intorno agli scogli, e ospita una ricca e variegata flora e fauna subacquea...
+                            La spiaggia di Grotticelle è costituita da tre piccole spiagge di sabbia chiara e sottile
+                            lambite da un mare azzurro e cristallino. Il fondale sabbioso davanti alla spiaggia diventa
+                            invece roccioso intorno agli scogli, e ospita una ricca e variegata flora e fauna
+                            subacquea...
                         </p>
                         <span class="button">
                             <router-link to="/beaches" class="">DETTAGLI</router-link>
                         </span>
                     </div>
                 </div>
-                <div class="border-top py-5 row">
+                <div id="spiaggia-tono" class="border-top py-5 row">
                     <div class="d-flex flex-column align-items-center justify-content-center gap-1 d-lg-none">
                         <h3>SPIAGGIA DEL TONO</h3>
                         <span>RICADI, ITALIA</span>
@@ -226,13 +269,16 @@ export default {
                         <span class="align-self-start">03</span>
                         <img class="ps-5" :src="getImgPath('../assets/img/tono.webp')" alt="">
                     </div>
-                    <div class="d-flex flex-column justify-content-evenly align-items-center align-items-lg-start col-12 col-lg-6 ps-lg-5 ps-xxl-0">
+                    <div
+                        class="d-flex flex-column justify-content-evenly align-items-center align-items-lg-start col-12 col-lg-6 ps-lg-5 ps-xxl-0">
                         <div class="align-items-center gap-4 d-none d-lg-flex">
                             <h3>SPIAGGIA DEL TONO</h3>
                             <span>RICADI, ITALIA</span>
                         </div>
                         <p class=" py-4 col-12 text-center text-lg-start">
-                            E’ una grandissima spiaggia con sabbia bianchissima e mare cristallino, dotata inoltre di tutti i servizi e comodità. Si affaccia su mare aperto con una visuale diretta su Stromboli e il resto delle Isole Eolie...
+                            E’ una grandissima spiaggia con sabbia bianchissima e mare cristallino, dotata inoltre di
+                            tutti i servizi e comodità. Si affaccia su mare aperto con una visuale diretta su Stromboli
+                            e il resto delle Isole Eolie...
                         </p>
                         <span class="button">
                             <router-link to="/beaches" class="">DETTAGLI</router-link>
@@ -245,7 +291,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-
 .hero::before {
     content: "";
     position: absolute;
@@ -404,68 +449,68 @@ h1 {
 
 }
 
-@media screen and ( min-width: 768px ){
+@media screen and (min-width: 768px) {
     .subcontainer {
-            width: 60%;
-            margin: 0 auto;
-            word-wrap: break-word;
-            text-align: center;
+        width: 60%;
+        margin: 0 auto;
+        word-wrap: break-word;
+        text-align: center;
 
-            p {
-                font-size: 1.2rem;
-                line-height: 25px;
-            }
-
-            h2 {
-                font-family: "Imbue", serif;
-                font-optical-sizing: auto;
-                color: white;
-                font-size: 3.5rem;
-                font-weight: 100;
-            }
+        p {
+            font-size: 1.2rem;
+            line-height: 25px;
         }
+
+        h2 {
+            font-family: "Imbue", serif;
+            font-optical-sizing: auto;
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 100;
+        }
+    }
 }
 
-@media screen and ( min-width: 992px ){
+@media screen and (min-width: 992px) {
     .hero::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 200px;
-    background: linear-gradient(to bottom, transparent, rgb(255, 255, 255, 0.6), rgb(255, 255, 255));
-    z-index: 1000;
-}
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 200px;
+        background: linear-gradient(to bottom, transparent, rgb(255, 255, 255, 0.6), rgb(255, 255, 255));
+        z-index: 1000;
+    }
 
-h1 {
-    font-family: "Imbue", serif;
-    font-optical-sizing: auto;
-    color: white;
-    font-size: 11vw;
-    font-weight: 90;
-    top: 150px;
-    left: 50%;
-    z-index: 999;
-}
+    h1 {
+        font-family: "Imbue", serif;
+        font-optical-sizing: auto;
+        color: white;
+        font-size: 11vw;
+        font-weight: 90;
+        top: 150px;
+        left: 50%;
+        z-index: 999;
+    }
 
-.hero-1 {
-    width: 50vw;
-    height: 100vh;
-    background-image: url(../assets/img/beautiful-italian-town-of-tropea-wallpaper.webp);
-    background-position: bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
-    // transform: rotateY(180deg);
-}
+    .hero-1 {
+        width: 50vw;
+        height: 100vh;
+        background-image: url(../assets/img/beautiful-italian-town-of-tropea-wallpaper.webp);
+        background-position: bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+        // transform: rotateY(180deg);
+    }
 
-.hero-2 {
-    width: 50vw;
-    height: 100vh;
-    background-image: url('../assets/img/praia\ i\ focu.webp');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    transform: rotateY(180deg);
-}
+    .hero-2 {
+        width: 50vw;
+        height: 100vh;
+        background-image: url('../assets/img/praia\ i\ focu.webp');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transform: rotateY(180deg);
+    }
 }
 </style>

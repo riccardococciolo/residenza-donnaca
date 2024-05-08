@@ -17,7 +17,10 @@
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
     "fortawesome": "^0.0.1-security",
+    "gsap": "^3.12.5",
     "luxon": "^3.4.4",
+    "pixi": "^0.3.1",
+    "pixi.js": "^8.1.1",
     "sass": "^1.74.1",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"

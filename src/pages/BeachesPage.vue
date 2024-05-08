@@ -1,6 +1,9 @@
 <script>
 
 import SingleBeach from '../components/SingleBeach.vue'
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 export default {
     data() {
@@ -20,6 +23,40 @@ export default {
             ]
         }
     },
+    methods: {
+        rightInAnimation(selector) {
+            gsap.from(selector, {
+                x: 500,
+                duration: 2,
+                ease: 'power3.out',
+                autoAlpha: 0,
+                scrollTrigger: {
+                    trigger: selector,
+                }
+            })
+        },
+        leftInAnimation(selector) {
+            gsap.from(selector, {
+                x: -500,
+                duration: 2,
+                ease: 'power3.out',
+                autoAlpha: 0,
+                scrollTrigger: {
+                    trigger: selector,
+                }
+            })
+        },
+    },
+    mounted() {
+        for (let i = 0; i < this.beaches.length; i++) {
+            if (i % 2 === 0) {
+                this.rightInAnimation(`#beach-${i}`)
+            } else {
+                this.leftInAnimation(`#beach-${i}`)
+            }
+            
+        }
+    },
     components: { SingleBeach }
 }
 </script>
@@ -30,7 +67,7 @@ export default {
             <h2>SPIAGGIE</h2>
         </div>
         <div class="container py-5">
-            <div class="border-top py-3 position-relative" v-for="beach in beaches">
+            <div :id="`beach-${index}`" class="border-top py-3 position-relative" v-for="(beach, index) in beaches">
                 <SingleBeach :beach="beach" />
             </div>
         </div>
