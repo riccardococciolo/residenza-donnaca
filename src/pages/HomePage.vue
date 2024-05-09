@@ -334,7 +334,7 @@ h1 {
     font-family: "Imbue", serif;
     font-optical-sizing: auto;
     color: white;
-    // font-size: 15vw;
+    font-size: 15vw;
     font-weight: 90;
     top: 100px;
     left: 50%;
