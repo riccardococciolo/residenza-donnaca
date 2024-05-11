@@ -106,7 +106,7 @@ export default {
 
 <template>
     <div class="position-relative">
-        <div class="wrapper d-flex py-lg-4 position-relative"
+        <div loading="eager" class="wrapper d-flex py-lg-4 position-relative"
             :style="{ backgroundImage: 'url(' + getImgPath(villa.img) + ')' }">
             <div id="overlay" class="row h-100 vw-100 z-4 position-absolute top-0 end-0">
 
