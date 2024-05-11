@@ -145,7 +145,7 @@ export default {
                                 :class="{ 'active': index === currentSlide }"
                                 class="my-carousel-item position-relative" @mouseover="stopAutoPlay" @mouseout="startAutoPlay">
                                 <div class="position-relative">
-                                    <img :class="{ 'zoom-img': zoom }" :src="getImgPath(item.img)" alt="">
+                                    <img :class="{ 'zoom-img': zoom }" :src="getImgPath(item.img)" loading="lazy" alt="">
                                     <span class=" position-absolute top-50 left" :class="{ 'left-zoom': zoom }"
                                         @click="prevSlide"><i
                                             class="fa-solid fa-chevron-right fa-flip-horizontal fa-2xl"></i></span>
