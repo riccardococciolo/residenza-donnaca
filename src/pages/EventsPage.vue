@@ -5,6 +5,45 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
+    metaInfo() {
+    return {
+      title: "Eventi Speciali - Residenza Donna Ca",
+      meta: [
+        {
+          name: "description",
+          content: "Partecipa agli eventi esclusivi organizzati da Residenza Donna Ca. Scopri concerti, degustazioni e molto altro!"
+        },
+        {
+          property: "og:title",
+          content: "Eventi esclusivi alla Residenza Donna Ca"
+        },
+        {
+          property: "og:description",
+          content: "Unisciti a noi per esperienze uniche: cene speciali, concerti e degustazioni in una location da sogno."
+        },
+        {
+          property: "og:image",
+          content: "https://www.residenzadonnaca.it/assets/img/eventi.jpg"
+        },
+        {
+          property: "og:url",
+          content: "https://www.residenzadonnaca.it/eventi"
+        },
+        {
+          name: "twitter:card",
+          content: "summary_large_image"
+        },
+        {
+          name: "twitter:title",
+          content: "Eventi Speciali - Residenza Donna Ca"
+        },
+        {
+          name: "twitter:description",
+          content: "Scopri gli eventi esclusivi della Residenza Donna Ca: concerti, degustazioni e molto altro."
+        }
+      ]
+    };
+  },
     data() {
         return {
             events: [

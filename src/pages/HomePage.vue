@@ -7,6 +7,45 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 export default {
+    metaInfo() {
+    return {
+      title: "Residenza Donna Ca - Vacanze da sogno in Calabria",
+      meta: [
+        {
+          name: "description",
+          content: "Prenota la tua vacanza perfetta nelle ville esclusive di Residenza Donna Ca, vicino alle spiagge più belle della Calabria."
+        },
+        {
+          property: "og:title",
+          content: "Residenza Donna Ca - Vacanze da sogno in Calabria"
+        },
+        {
+          property: "og:description",
+          content: "Scopri le ville e le spiagge più esclusive della Calabria e goditi una vacanza indimenticabile."
+        },
+        {
+          property: "og:image",
+          content: "https://www.residenzadonnaca.it/assets/img/homepage.jpg"
+        },
+        {
+          property: "og:url",
+          content: "https://www.residenzadonnaca.it/"
+        },
+        {
+          name: "twitter:card",
+          content: "summary_large_image"
+        },
+        {
+          name: "twitter:title",
+          content: "Residenza Donna Ca - Vacanze da sogno in Calabria"
+        },
+        {
+          name: "twitter:description",
+          content: "Scopri le nostre ville e spiagge per una vacanza perfetta."
+        }
+      ]
+    };
+  },
     data() {
         return {
             events: [
