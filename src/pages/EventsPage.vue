@@ -2,6 +2,9 @@
 import SingleEvent from '../components/SingleEvent.vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import VueMeta from 'vue-meta';
+
+Vue.use(VueMeta);
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
