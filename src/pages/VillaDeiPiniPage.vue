@@ -1,49 +1,8 @@
 <script>
 import SingleVilla from '../components/SingleVilla.vue';
-import VueMeta from 'vue-meta';
-
-Vue.use(VueMeta);
 
 export default {
-    metaInfo() {
-    return {
-      title: "Villa Dei Pini - Natura e Comfort in Calabria",
-      meta: [
-        {
-          name: "description",
-          content: "Villa Dei Pini, immersa nella natura della Calabria, perfetta per una vacanza rilassante a pochi passi dal mare."
-        },
-        {
-          property: "og:title",
-          content: "Villa Dei Pini - Relax nella natura della Calabria"
-        },
-        {
-          property: "og:description",
-          content: "Vivi l'esperienza di una villa immersa nella natura, con tutti i comfort e il mare a pochi minuti."
-        },
-        {
-          property: "og:image",
-          content: "https://www.residenzadonnaca.it/assets/img/villa-dei-pini.jpg"
-        },
-        {
-          property: "og:url",
-          content: "https://www.residenzadonnaca.it/villa-dei-pini"
-        },
-        {
-          name: "twitter:card",
-          content: "summary_large_image"
-        },
-        {
-          name: "twitter:title",
-          content: "Villa Dei Pini - Natura e Comfort in Calabria"
-        },
-        {
-          name: "twitter:description",
-          content: "Scopri il relax nella natura con Villa Dei Pini, perfetta per una vacanza rigenerante."
-        }
-      ]
-    };
-  },
+    
     data() {
         return {
             villaDeiPini:

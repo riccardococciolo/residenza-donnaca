@@ -1,49 +1,8 @@
 <script>
 import SingleVilla from '../components/SingleVilla.vue';
-import VueMeta from 'vue-meta';
-
-Vue.use(VueMeta);
 
 export default {
-    metaInfo() {
-    return {
-      title: "Villa Aurelia - Lusso e Relax in Calabria",
-      meta: [
-        {
-          name: "description",
-          content: "Villa Aurelia, un'oasi di lusso e comfort a pochi passi dal mare della Calabria. Prenota ora la tua vacanza perfetta."
-        },
-        {
-          property: "og:title",
-          content: "Villa Aurelia - La tua casa vacanze in Calabria"
-        },
-        {
-          property: "og:description",
-          content: "Un soggiorno esclusivo in una villa di lusso immersa nella natura e a pochi minuti dal mare."
-        },
-        {
-          property: "og:image",
-          content: "https://www.residenzadonnaca.it/assets/img/villa-aurelia.jpg"
-        },
-        {
-          property: "og:url",
-          content: "https://www.residenzadonnaca.it/villa-aurelia"
-        },
-        {
-          name: "twitter:card",
-          content: "summary_large_image"
-        },
-        {
-          name: "twitter:title",
-          content: "Villa Aurelia - Lusso e Relax in Calabria"
-        },
-        {
-          name: "twitter:description",
-          content: "Scopri Villa Aurelia, una residenza esclusiva per il tuo soggiorno in Calabria."
-        }
-      ]
-    };
-  },
+    
     data() {
         return {
             villaAurelia:

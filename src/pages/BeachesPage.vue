@@ -3,51 +3,10 @@
 import SingleBeach from '../components/SingleBeach.vue'
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import VueMeta from 'vue-meta';
-
-Vue.use(VueMeta);
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
-    metaInfo() {
-    return {
-      title: "Spiagge della Calabria - Residenza Donna Ca",
-      meta: [
-        {
-          name: "description",
-          content: "Scopri le spiagge più belle della Calabria vicino alla Residenza Donna Ca. Acque cristalline e relax garantiti!"
-        },
-        {
-          property: "og:title",
-          content: "Spiagge mozzafiato vicino alla Residenza Donna Ca"
-        },
-        {
-          property: "og:description",
-          content: "Le migliori spiagge della Calabria a pochi passi dalla tua residenza ideale."
-        },
-        {
-          property: "og:image",
-          content: "https://www.residenzadonnaca.it/assets/img/spiaggia.jpg"
-        },
-        {
-          property: "og:url",
-          content: "https://www.residenzadonnaca.it/spiagge"
-        },
-        {
-          name: "twitter:card",
-          content: "summary_large_image"
-        },
-        {
-          name: "twitter:title",
-          content: "Spiagge della Calabria - Residenza Donna Ca"
-        },
-        {
-          name: "twitter:description",
-          content: "Goditi il mare cristallino della Calabria con le spiagge più esclusive."
-        }
-      ]
-    };
-  },
+    
     data() {
         return {
             beaches: [
