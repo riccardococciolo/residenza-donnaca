@@ -3,9 +3,6 @@ import { DateTime } from 'luxon';
 import EventCard from '../components/EventCard.vue'
 import { gsap } from '../../node_modules/gsap'
 import { ScrollTrigger } from '../../node_modules/gsap/ScrollTrigger';
-import VueMeta from 'vue-meta';
-
-Vue.use(VueMeta);
 gsap.registerPlugin(ScrollTrigger);
 
 

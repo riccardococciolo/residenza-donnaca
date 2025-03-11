@@ -4,6 +4,9 @@ import EventsPage from "./pages/EventsPage.vue";
 import BeachesPage from "./pages/BeachesPage.vue";
 import VillaAureliaPage from "./pages/VillaAureliaPage.vue";
 import VillaDeiPiniPage from './pages/VillaDeiPiniPage.vue';
+import Meta from 'vue-meta'
+
+Vue.use(Meta)
 
 const router = createRouter({
   history: createWebHistory(),

@@ -1,8 +1,5 @@
 <script>
 import SingleVilla from '../components/SingleVilla.vue';
-import VueMeta from 'vue-meta';
-
-Vue.use(VueMeta);
 
 export default {
     metaInfo() {
